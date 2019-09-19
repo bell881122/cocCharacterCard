@@ -12,6 +12,7 @@ import { StatusItemComponent } from './character/characteristics/statusItem.comp
 import { StatusItemService } from './character/characteristics/statusItem.service';
 import { HeadshotComponent } from './character/profile/headshot.component';
 import { SkillListComponent } from './character/skill-list/skill-list.component';
+import { SkillsComponent } from './character/skill-list/skills.component';
 
 
 
@@ -25,6 +26,7 @@ import { SkillListComponent } from './character/skill-list/skill-list.component'
     StatusItemComponent,
     HeadshotComponent,
     SkillListComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
