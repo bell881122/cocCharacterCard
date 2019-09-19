@@ -1,0 +1,38 @@
+<h3 class="text-center">{{title}}</h3>
+<div class="border border-secondary rounded p-3">
+
+    <form>
+        <div class="row d-flex">
+            <div *ngFor="let i of items" class="col-4 mb-2">
+                <statusItem [item]="i" class="d-flex"></statusItem>
+            </div>
+        </div>
+<!--         <div class="row d-flex">
+            <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
+                <div>Idea
+                    <input type="text" [value]="idea">
+                </div>
+            </div>
+        </div> 
+
+        <div>Idea
+            <input type="text" [value]="idea">
+        </div>
+        <div>luck
+            <input type="text" [value]="luck">
+        </div>
+        <div>know
+            <input type="text" [value]="know">
+        </div>
+        <div>hp
+            <input type="text" [value]="hp">
+        </div>
+        <div>mp
+            <input type="text" [value]="mp">
+        </div>
+        <div>san
+            <input type="text" [value]="san">
+        </div>
+-->
+    </form>
+</div>
