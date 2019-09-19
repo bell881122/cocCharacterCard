@@ -13,6 +13,7 @@ import { StatusItemService } from './character/characteristics/statusItem.servic
 import { HeadshotComponent } from './character/profile/headshot.component';
 import { SkillListComponent } from './character/skill-list/skill-list.component';
 import { SkillsComponent } from './character/skill-list/skills.component';
+import { SkillsService } from './character/skill-list/skills.service';
 
 
 
@@ -35,7 +36,8 @@ import { SkillsComponent } from './character/skill-list/skills.component';
   ],
   providers: [
     // Costum Service
-    StatusItemService
+    StatusItemService,
+    SkillsService
   ],
   bootstrap: [AppComponent]
 })

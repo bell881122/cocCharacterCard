@@ -2,7 +2,7 @@
 export class SkillsService{
     getSkills(){
         return[
-            {skillName:''}
+            {skillName:123}
         ]
     }
 }
