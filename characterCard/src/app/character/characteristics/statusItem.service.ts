@@ -20,16 +20,6 @@ export class StatusItemService {
 
     getItems() {
         return [
-            { status: 'str', value: NaN },
-            { status: 'dex', value: NaN },
-            { status: 'pow', value: NaN },
-            { status: 'app', value: NaN },
-            { status: 'con', value: NaN },
-            { status: 'edu', value: NaN },
-            { status: 'siz', value: NaN },
-            { status: 'int', value: NaN },
-        ]
-/*         return [
             { status: 'str', value: strValue },
             { status: 'dex', value: dexValue },
             { status: 'pow', value: powValue },
@@ -39,6 +29,6 @@ export class StatusItemService {
             { status: 'siz', value: sizValue },
             { status: 'int', value: intValue },
         ]
- */    }
+    }
 
 }

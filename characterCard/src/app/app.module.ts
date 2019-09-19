@@ -9,8 +9,9 @@ import { CharacterComponent } from './character/character.component';
 import { ProfileComponent } from './character/profile/profile.component';
 import { CharacteristicsComponent } from './character/characteristics/characteristics.component';
 import { StatusItemComponent } from './character/characteristics/statusItem.component';
-
 import { StatusItemService } from './character/characteristics/statusItem.service';
+import { HeadshotComponent } from './character/profile/headshot.component';
+import { SkillListComponent } from './character/skill-list/skill-list.component';
 
 
 
@@ -21,7 +22,9 @@ import { StatusItemService } from './character/characteristics/statusItem.servic
     CharacterComponent,
     ProfileComponent,
     CharacteristicsComponent,
-    StatusItemComponent
+    StatusItemComponent,
+    HeadshotComponent,
+    SkillListComponent,
   ],
   imports: [
     BrowserModule,

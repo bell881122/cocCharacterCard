@@ -1,38 +1,29 @@
-<h3 class="text-center">{{title}}</h3>
-<div class="border border-secondary rounded p-3">
-
-    <form>
-        <div class="row d-flex">
-            <div *ngFor="let i of items" class="col-4 mb-2">
-                <statusItem [item]="i" class="d-flex"></statusItem>
-            </div>
-        </div>
-<!--         <div class="row d-flex">
-            <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
-                <div>Idea
-                    <input type="text" [value]="idea">
+<div class="row">
+    <div class="col-9">
+        <h3 class="text-center">{{title}}</h3>
+        <div class="border border-secondary rounded p-3">
+            <form>
+                <div class="row d-flex">
+                    <div *ngFor="let i of items" class="col-4 mb-2">
+                        <statusItem [item]="i" class="d-flex"></statusItem>
+                    </div>
                 </div>
-            </div>
-        </div> 
+            </form>
+        </div>
+    </div>
+    <div class="col-3">
+        <h3 class="text-center">Headshot</h3>
+        <headshot></headshot>
 
-        <div>Idea
-            <input type="text" [value]="idea">
+    </div>
+</div>
+
+<div class="border border-secondary rounded p-3">
+    <div class="row d-flex">
+        <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
+            <label class="mr-2">{{i.status| uppercase}}</label>
+            <input type="number" class="form-control" [value]="i.value">
         </div>
-        <div>luck
-            <input type="text" [value]="luck">
-        </div>
-        <div>know
-            <input type="text" [value]="know">
-        </div>
-        <div>hp
-            <input type="text" [value]="hp">
-        </div>
-        <div>mp
-            <input type="text" [value]="mp">
-        </div>
-        <div>san
-            <input type="text" [value]="san">
-        </div>
--->
-    </form>
+    </div>
+
 </div>
