@@ -12,14 +12,7 @@ export class CharacteristicsComponent {
 
     items;
 
-    subItems = [
-        { status: 'idea', value: 0 },
-        { status: 'luck', value: 0 },
-        { status: 'know', value: 0 },
-        { status: 'hp', value: 0 },
-        { status: 'mp', value: 0 },
-        { status: 'san', value: 0 },
-    ]
+
     constructor(statusItemService: StatusItemService) {
         this.items = statusItemService.getItems();
 
@@ -31,5 +24,13 @@ export class CharacteristicsComponent {
         this.subItems[4].value = this.items[2].value;
         this.subItems[5].value = this.items[2].value * 5;
     }
-
+    
+    subItems = [
+        { status: 'idea', value: 0 },
+        { status: 'luck', value: 0 },
+        { status: 'know', value: 0 },
+        { status: 'hp', value: 0 },
+        { status: 'mp', value: 0 },
+        { status: 'san', value: 0 },
+    ];
 }

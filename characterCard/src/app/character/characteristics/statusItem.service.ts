@@ -1,4 +1,3 @@
-import { isNgTemplate } from '@angular/compiler';
 
 let strValue = random18();
 let dexValue = random18();
