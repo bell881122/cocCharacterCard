@@ -5,26 +5,11 @@ import { StatusItemService } from '../characteristics/statusItem.service';
 
 @Component({
   selector: 'skill-list',
-  // templateUrl: './skill-list.component.html',
-  template:`
-  <h3 class="text-center">{{title}}</h3>
-
-<div class="border border-secondary rounded p-3 my-2">
-    <div class="d-flex">
-        <p class="mr-5">職業點數：{{subItems[0].value}}</p>
-        <p class="mr-5">興趣點數：{{subItems[1].value}}</p>
-    </div>
-        <div class="skill-list d-flex flex-column flex-wrap">
-            <div *ngFor="let s of skills" class="mb-2">
-                <skills [skill]="s" class="d-flex d-flex align-items-center"></skills>
-        </div>
-    </div>
-</div>
-  
-  `,
+  templateUrl: './skill-list.component.html',
+  // template:`  `,
   styles:[`
   .skill-list{
-    height:860px;
+    height:1000px;
   }
   .skill-list > div{
     width:23%;
