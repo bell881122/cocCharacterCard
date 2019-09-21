@@ -2,12 +2,16 @@
 
 <div class="border border-secondary rounded p-3 my-2">
     <div class="d-flex">
-        <p class="mr-5">職業點數：{{subItems[0].value}}</p>
-        <p class="mr-5">興趣點數：{{subItems[1].value}}</p>
+        <p class="mr-5">職業點數：{{skillTypePoint.careerPoint}}</p>
+        <p class="mr-5">興趣點數：{{skillTypePoint.hobbyPoint}}</p>
+        <p class="mr-5">職業總值：{{carrerTotal}}</p>
+        <p class="mr-5">興趣總值：{{hobbyTotal}}</p>
+<!-- {{carrerValueTotal}} -->
+
     </div>
     <div class="skill-list d-flex flex-column flex-wrap">
         <div *ngFor="let s of skills" class="mb-2">
-            <skills [skill]="s" class="d-flex"></skills>
+            <skills [skill]="s" class="d-flex" (click)="getSkillTotal()"></skills>
         </div>
     </div>
 </div>

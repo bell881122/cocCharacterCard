@@ -1,19 +1,20 @@
 
-let strValue = random18();
-let dexValue = random18();
-let powValue = random18();
-let conValue = random18();
-let appValue = random18();
-let eduValue = random18() + 3;
-let sizValue = intSizRandom();
-let intValue = intSizRandom();
+let strValue = random3to18();
+let dexValue = random3to18();
+let powValue = random3to18();
+let conValue = random3to18();
+let appValue = random3to18();
+let eduValue = random8to18();
+let sizValue = random8to18();
+let intValue = random8to18();
 
-function intSizRandom() {
-    return Math.floor(Math.random() * 12) + 1 + 6;
+function random3to18() {
+    return Math.floor(Math.random() * 16) + 3;
 }
-function random18() {
-    return Math.floor(Math.random() * 18) + 1;
+function random8to18() {
+    return Math.floor(Math.random() * 11) + 8;
 }
+
 
 export class StatusItemService {
 

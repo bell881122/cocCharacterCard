@@ -3,29 +3,11 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'skills',
-    template: `
+    templateUrl: 'skills.component.html',
+/*     template: `
 
-<div class="row d-flex  skill-group">
-    <div class="col-2">
-        <div class="row">
-            <div class="col skilltype">
-                <input type="checkbox" name="skill.skillName" value="carrer" checked><span class="checkbox">職</span><br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col skilltype">
-                <input type="checkbox" name="skill.skillName" value="hobby" checked><span class="checkbox">興</span><br>
-            </div>
-        </div>
-    </div>
-    <div class="col-10 d-flex skill align-items-center">
-        <label class="mr-2 mb-0 text-right">{{ skill.skillName }}</label>
-        <input type="number" name="skill.skillName" class="form-control" [value]="skill.value"><span
-            class="ml-1">%</span>
-    </div>
-</div>
     `,
-    styles:[`
+ */    styles:[`
     .checkbox,
     input[type="checkbox"]{
         font-size:8px;
@@ -37,7 +19,7 @@ import { Component, Input } from '@angular/core';
     .skill-group{
         margin: 0px;
     }
-    .skilltype{
+    .skillTypePoint{
         padding:0px;
     }
     .skill{
@@ -49,9 +31,26 @@ import { Component, Input } from '@angular/core';
 })
 
 
+
 export class SkillsComponent {
     @Input() skill;
+    
+    
+    changeCarrerPoint() {
+        if (this.skill.carrerChecked) {
+            this.skill.carrerValue = this.skill.value;
+        }else{
+            this.skill.carrerValue =0;
+        }
+        // console.log(this);
+    }
 
-
-
+    changeHobbyPoint() {
+        if (this.skill.hobbyChecked) {
+            this.skill.hobbyValue = this.skill.value;
+        } else {
+            this.skill.hobbyValue = 0;
+        }
+        // console.log(this);
+    }
 }

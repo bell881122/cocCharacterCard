@@ -7,9 +7,9 @@ import { StatusItemService } from '../characteristics/statusItem.service';
   selector: 'skill-list',
   templateUrl: './skill-list.component.html',
   // template:`  `,
-  styles:[`
+  styles: [`
   .skill-list{
-    height:1000px;
+    height:1100px;
   }
   .skill-list > div{
     width:23%;
@@ -17,28 +17,59 @@ import { StatusItemService } from '../characteristics/statusItem.service';
   `],
   providers: [
     SkillsService,
-     StatusItemService
-    ]
+    StatusItemService
+  ]
 })
 
 export class SkillListComponent implements OnInit {
-  title='Skill List'
+  title = 'Skill List'
 
   skills;
   items;
-  subItems=[
-    { status: 'careerPoint', value: 0 },
-    { status: 'hobbyPoint', value: 0 },
-    ];
+  skillTypePoint = {
+    careerPoint: 0,
+    hobbyPoint: 0
+  };
+
+
+  skillTotalPoint =
+    {
+      carrer: 0,
+      hobby: 0
+    };
+
+  carrerValueTotal = [];
+  hobbyValueTotal;
+
+
+
+  carrerTotal = this.skillTotalPoint.carrer;
+  hobbyTotal = this.skillTotalPoint.hobby;
+
 
   constructor(skillsService: SkillsService, statusItemService: StatusItemService) {
     this.skills = skillsService.getSkills();
 
     this.items = statusItemService.getItems();
-    this.subItems[0].value = this.items[5].value * 20;
-    this.subItems[1].value = this.items[7].value * 10;
+    this.skillTypePoint.careerPoint = this.items[5].value * 20;
+    this.skillTypePoint.hobbyPoint = this.items[7].value * 10;
 
-   }
+  }
+
+  // get skillTotalPoint
+  getSkillTotal() {
+
+    this.carrerTotal = 0;
+    this.hobbyTotal = 0;
+    setTimeout(() => {
+      for (let i = 0; i < this.skills.length; i++) {
+        this.carrerTotal += this.skills[i].carrerValue;
+        this.hobbyTotal += this.skills[i].hobbyValue;
+      }
+    }, 10);
+
+
+  }
 
   ngOnInit() {
   }
