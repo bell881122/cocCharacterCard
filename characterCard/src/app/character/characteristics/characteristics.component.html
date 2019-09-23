@@ -2,13 +2,11 @@
     <div class="col-9">
         <h3 class="text-center">{{title}}</h3>
         <div class="border border-secondary rounded p-3">
-            <form>
                 <div class="row d-flex">
                     <div *ngFor="let i of items" class="col-4 mb-2">
                         <statusItem [item]="i" class="d-flex"></statusItem>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
     <div class="col-3">

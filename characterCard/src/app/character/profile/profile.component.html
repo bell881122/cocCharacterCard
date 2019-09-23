@@ -1,32 +1,48 @@
 <h3 class="text-center">{{title}}</h3>
 <div class="border border-secondary rounded p-3">
-    <form>
+
+
+    <form #form="ngForm" (ngSubmit)="saveFormData(form.value)">
         <div class="form-group d-flex my-2">
             <label for="chName">Name</label>
-            <input type="text" class="form-control" id="chName" placeholder="角色姓名">
+            <input type="text" class="form-control" 
+            id="chName" name="chName" 
+            [(ngModel)]="chName" placeholder="角色姓名">
         </div>
         <div class="form-group d-flex my-0">
             <label for="plName">Player</label>
-            <input type="text" class="form-control" id="plName" placeholder="玩家姓名">
+            <input type="text" class="form-control" 
+            id="plName" name="plName"
+             [(ngModel)]="plName" placeholder="玩家姓名">
         </div>
         <div class="d-flex my-0">
             <div class="">
                 <label for="age">Age</label>
-                <input type="text" class="form-control" id="age" placeholder="年齡">
+                <input type="text" class="form-control" 
+                id="age" name="age" 
+                [(ngModel)]="age" placeholder="年齡">
             </div>
             <div class="">
                 <label for="gender">Gender</label>
-                <input type="text" class="form-control" id="gender" placeholder="性別">
+                <input type="text" class="form-control" 
+                id="gender" name="gender" 
+                [(ngModel)]="gender" placeholder="性別">
             </div>
         </div>
         <div class="form-group d-flex my-2">
             <label for="occupation">Occupation</label>
-            <input type="text" class="form-control" id="occupation" placeholder="職業">
+            <input type="text" class="form-control" 
+            id="occupation" name="occupation" 
+            [(ngModel)]="occupation" placeholder="職業">
         </div>
         <div class="form-group d-flex my-2">
-            <label for="birthplace">Player</label>
-            <input type="text" class="form-control" id="birthplace" placeholder="出生地">
+            <label for="birthplace">Birthplace</label>
+            <input type="text" class="form-control" 
+            id="birthplace" name="birthplace"
+            [(ngModel)]="birthplace" placeholder="出生地">
         </div>
-        <button type="submit" class="btn btn-primary">送出</button>
+        <button type="submit" class="btn btn-primary mr-2">Save</button>
+        <button type="button" class="btn btn-primary" 
+        (click)="getProfileData()">Load</button>
     </form>
 </div>

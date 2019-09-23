@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-
 @Component({
     selector: 'skills',
     templateUrl: 'skills.component.html',
@@ -37,12 +36,15 @@ export class SkillsComponent {
     
     
     changeCarrerPoint() {
+        let thisSkill = document.querySelector('#' + this.skill.skillName);
+
+
         if (this.skill.carrerChecked) {
             this.skill.carrerValue = this.skill.value;
         }else{
             this.skill.carrerValue =0;
         }
-        // console.log(this);
+        console.log(thisSkill);
     }
 
     changeHobbyPoint() {
@@ -51,6 +53,6 @@ export class SkillsComponent {
         } else {
             this.skill.hobbyValue = 0;
         }
-        // console.log(this);
+        console.log(this);
     }
 }

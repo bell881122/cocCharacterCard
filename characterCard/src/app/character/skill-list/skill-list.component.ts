@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsService } from './skills.service';
 import { StatusItemService } from '../characteristics/statusItem.service';
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'skill-list',
@@ -38,8 +38,6 @@ export class SkillListComponent implements OnInit {
       hobby: 0
     };
 
-  carrerValueTotal = [];
-  hobbyValueTotal;
 
 
 
@@ -55,6 +53,14 @@ export class SkillListComponent implements OnInit {
     this.skillTypePoint.hobbyPoint = this.items[7].value * 10;
 
   }
+
+
+  amoutOfaddpoint(f: NgForm): void {
+
+  }
+
+
+
 
   // get skillTotalPoint
   getSkillTotal() {
