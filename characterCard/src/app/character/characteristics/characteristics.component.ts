@@ -37,7 +37,7 @@ export class CharacteristicsComponent {
         { status: 'san', value: 0 },
     ];
 
-    saveStatusItem(f: NgForm): void {
+    saveStatusItem() {
         let saveStatusData = {
             "statusData": [
                 this.items[0].value,

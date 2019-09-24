@@ -55,9 +55,7 @@ export class SkillListComponent implements OnInit {
   }
 
 
-  amoutOfaddpoint(f: NgForm): void {
-
-  }
+  amoutOfaddpoint(): void {  }
 
 
 

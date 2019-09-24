@@ -3,22 +3,20 @@
         <h5 class="mb-0">{{subtitle}}</h5>
         <h1 class="mb-4">{{title}}</h1>
     </div>
-
-<form #form="ngForm" (ngSubmit)="saveFormData(form.value)">
-        <div class="row mt-2">
-            <div class="col">
-                <div class="row">
-                    <div class="col-3">
-                        <profile></profile>
-                    </div>
-                    <div class="col-9">
-                        <characteristics></characteristics>
-                    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <div class="row">
+                <div class="col-3">
+                    <profile></profile>
+                </div>
+                <div class="col-9">
+                    <characteristics></characteristics>
                 </div>
             </div>
         </div>
-        <skill-list></skill-list>
+    </div>
+    <skill-list></skill-list>
 
-</form>
+
 
 </div>
