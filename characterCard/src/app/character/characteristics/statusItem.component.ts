@@ -16,4 +16,6 @@ import { Component, Input } from '@angular/core';
 
 export class StatusItemComponent {
     @Input() item;
+
+   
 }

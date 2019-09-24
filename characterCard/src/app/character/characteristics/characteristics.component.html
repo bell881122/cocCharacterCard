@@ -2,11 +2,16 @@
     <div class="col-9">
         <h3 class="text-center">{{title}}</h3>
         <div class="border border-secondary rounded p-3">
-                <div class="row d-flex">
-                    <div *ngFor="let i of items" class="col-4 mb-2">
-                        <statusItem [item]="i" class="d-flex"></statusItem>
-                    </div>
+            <div class="row d-flex">
+                <div *ngFor="let i of items;let index = index;" class="col-4 mb-2 d-flex">
+                    <!-- <statusItem [item]="i" class=""></statusItem> -->
+                    <label class="mr-2">{{ i.status | uppercase}}</label>
+                    <input type="number" class="form-control" [id]="i.status" [name]="i.status" [value]="i.value"
+                        [(ngModel)]="i.value">
                 </div>
+                <button type="button" class="btn btn-primary mr-2" (click)="saveStatusItem()">Save</button>
+                <button type="button" class="btn btn-primary" (click)="getStatusItem()">Load</button>
+            </div>
         </div>
     </div>
     <div class="col-3">
@@ -23,3 +28,6 @@
         </div>
     </div>
 </div>
+
+
+

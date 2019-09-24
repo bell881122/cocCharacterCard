@@ -22,7 +22,7 @@ export class ProfileComponent {
     occupation;
     birthplace;
 
-    saveFormData(f: NgForm): void {
+    saveProfileData(f: NgForm): void {
         let profiledata = {
             "profiledata": [
                 this.chName,

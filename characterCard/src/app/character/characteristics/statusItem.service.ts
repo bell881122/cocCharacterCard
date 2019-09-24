@@ -20,14 +20,14 @@ export class StatusItemService {
 
     getItems() {
         return [
-            { status: 'str', value: strValue },
-            { status: 'dex', value: dexValue },
-            { status: 'pow', value: powValue },
-            { status: 'app', value: appValue },
-            { status: 'con', value: conValue },
-            { status: 'edu', value: eduValue },
-            { status: 'siz', value: sizValue },
-            { status: 'int', value: intValue },
+            { id: 'strId',status: 'str', value: strValue },
+            { id: 'dexId',status: 'dex', value: dexValue },
+            { id: 'powId',status: 'pow', value: powValue },
+            { id: 'appId',status: 'app', value: appValue },
+            { id: 'conId',status: 'con', value: conValue },
+            { id: 'eduId',status: 'edu', value: eduValue },
+            { id: 'sizId',status: 'siz', value: sizValue },
+            { id: 'intId',status: 'int', value: intValue },
         ]
     }
 
