@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { ProfileComponent } from './profile/profile.component';
+
+
 @Component({
     selector: 'character',
-    templateUrl:'character.component.html'
+    templateUrl: 'character.component.html'
 })
 
-export class CharacterComponent {
-    title =`Character Card`
+export class CharacterComponent implements AfterViewInit {
+
+    // child to parent test
+    @ViewChild(ProfileComponent,{static:false}) child;
+    message: string;
+
+    ngAfterViewInit() {
+        this.message = this.child.profiledata[0];
+    }
+
+
+
+
+    title = `Character Card`
     subtitle = `CALL Of CTHULHU`;
 
+    saveAll() {
+        alert('所有資料已儲存');
+    }
+
+    saveCharacter() {
+
+    }
+
+    getCharacter() { }
 
 }

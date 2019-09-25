@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
     selector: 'profile',
     templateUrl: 'profile.component.html',
@@ -15,12 +16,29 @@ import { NgForm } from '@angular/forms';
 export class ProfileComponent {
     title = `Profile`;
 
-    chName;
-    plName;
-    age;
-    gender;
-    occupation;
-    birthplace;
+    chName='';
+    plName = '';
+    age='';
+    gender='';
+    occupation='';
+    birthplace='';
+
+    callprofiledata() {
+        console.log(this.profiledata);
+    }
+
+    profiledata = {
+        "profiledata": [
+            this.chName,
+            this.plName,
+            this.age,
+            this.gender,
+            this.occupation,
+            this.birthplace
+        ]
+    };
+
+
 
     saveProfileData(f: NgForm): void {
         let profiledata = {
@@ -35,19 +53,27 @@ export class ProfileComponent {
         };
         // console.log(this.profiledata);
         localStorage.setItem('profiledata', JSON.stringify(profiledata));
-        alert('資料已儲存');
-        console.log(profiledata);
+        // alert('資料已儲存');
+        // console.log(profiledata);
     }
 
     getProfileData() {
         let data = JSON.parse(localStorage.getItem('profiledata'));
-        // console.log(data);
         // console.log(data['profiledata'][0]);
-        this.chName= data['profiledata'][0];
-            this.plName= data['profiledata'][1];
-            this.age= data['profiledata'][2];
-            this.gender= data['profiledata'][3];
-            this.occupation= data['profiledata'][4];
-            this.birthplace= data['profiledata'][5];
+        this.chName = data['profiledata'][0];
+        this.plName = data['profiledata'][1];
+        this.age = data['profiledata'][2];
+        this.gender = data['profiledata'][3];
+        this.occupation = data['profiledata'][4];
+        this.birthplace = data['profiledata'][5];
+        
     }
+
+
+
+
+
+
+    // child to parent test
+    message = 'Hola Mundo!';
 }
