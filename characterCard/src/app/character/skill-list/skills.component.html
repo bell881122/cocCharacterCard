@@ -3,21 +3,21 @@
         <div class="row">
             <div class="col skillTypePoint">
                 <input type="checkbox" name="skill.skillName" value="carrer" 
-                [checked]="skill.carrerChecked" (change)="skill.carrerChecked = !skill.carrerChecked" (change)="changeCarrerPoint()">
+                [checked]="skill.carrerChecked" (change)="skill.carrerChecked = !skill.carrerChecked"  (change)="changeCarrerPoint()">
                 <span class="checkbox">職</span><br>
             </div>
         </div>
         <div class="row">
             <div class="col skillTypePoint">
                 <input type="checkbox" name="skill.skillName" value="hobby"
-                 [checked]="skill.hobbyChecked"  (change)="skill.hobbyChecked = !skill.hobbyChecked" (change)="changeHobbyPoint()">
+                 [checked]="skill.hobbyChecked"  (change)="skill.hobbyChecked = !skill.hobbyChecked"  (change)="changeHobbyPoint()">
                 <span class="checkbox">興</span><br>
             </div>
         </div>
     </div>
     <div class="col-10 d-flex skill align-items-center">
         <label class="mr-2 mb-0 text-right">{{ skill.skillName }}</label>
-        <input type="number" name="skill.skillName" class="form-control"  [value]="skill.value"><span
-            class="ml-1">%</span>
+        <input type="number" name="skill.skillName" class="form-control" value="skill.carrerValue" [(ngModel)]="skill.value"  (click)="changeCarrerPoint()"  (click)="changeHobbyPoint()">
+        <span class="ml-1">%</span>
     </div>
 </div>

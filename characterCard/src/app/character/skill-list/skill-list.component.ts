@@ -26,10 +26,27 @@ export class SkillListComponent implements OnInit {
 
   skills;
   items;
+
   skillTypePoint = {
     careerPoint: 0,
     hobbyPoint: 0
   };
+
+  careerTotalPoint;
+  hobbyTotalPoint;
+
+  // 母語&閃避 + 職業&興趣點數
+  constructor(skillsService: SkillsService, statusItemService: StatusItemService) {
+    this.skills = skillsService.getSkills();
+    this.items = statusItemService.getItems();
+
+    this.skillTypePoint.careerPoint = this.items[5].value * 20;
+    this.skillTypePoint.hobbyPoint = this.items[7].value * 10;
+    this.careerTotalPoint = this.skillTypePoint.careerPoint;
+    this.hobbyTotalPoint = this.skillTypePoint.hobbyPoint;
+  }
+
+
 
 
   skillTotalPoint =
@@ -41,36 +58,31 @@ export class SkillListComponent implements OnInit {
 
 
 
-  carrerTotal = this.skillTotalPoint.carrer;
-  hobbyTotal = this.skillTotalPoint.hobby;
 
-
-  constructor(skillsService: SkillsService, statusItemService: StatusItemService) {
-    this.skills = skillsService.getSkills();
-
-    this.items = statusItemService.getItems();
-    this.skillTypePoint.careerPoint = this.items[5].value * 20;
-    this.skillTypePoint.hobbyPoint = this.items[7].value * 10;
-
-  }
-
-
-  amoutOfaddpoint(): void {  }
 
 
 
 
   // get skillTotalPoint
   getSkillTotal() {
+    let varCareerTotalPoint = this.careerTotalPoint;
+    let varHobbyTotalPoint = this.hobbyTotalPoint;
 
-    this.carrerTotal = 0;
-    this.hobbyTotal = 0;
-    setTimeout(() => {
+
+    this.skillTotalPoint.carrer = 0;
+    this.skillTotalPoint.hobby = 0;
+    // setTimeout(() => {
       for (let i = 0; i < this.skills.length; i++) {
-        this.carrerTotal += this.skills[i].carrerValue;
-        this.hobbyTotal += this.skills[i].hobbyValue;
+        this.skillTotalPoint.carrer += this.skills[i].carrerValue;
+        this.skillTotalPoint.hobby += this.skills[i].hobbyValue;
       }
-    }, 10);
+    // }, 10);
+
+
+    varCareerTotalPoint -= this.skillTotalPoint.carrer;
+    this.skillTypePoint.careerPoint = varCareerTotalPoint;
+    varHobbyTotalPoint -= this.skillTotalPoint.hobby;
+    this.skillTypePoint.hobbyPoint = varHobbyTotalPoint;
 
 
   }

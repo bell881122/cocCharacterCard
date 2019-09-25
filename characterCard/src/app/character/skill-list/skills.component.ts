@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 /*     template: `
 
     `,
- */    styles:[`
+ */    styles: [`
     .checkbox,
     input[type="checkbox"]{
         font-size:8px;
@@ -33,26 +33,39 @@ import { Component, Input } from '@angular/core';
 
 export class SkillsComponent {
     @Input() skill;
-    
-    
+    @Input() childMessage;
+
+
     changeCarrerPoint() {
-        let thisSkill = document.querySelector('#' + this.skill.skillName);
-
-
         if (this.skill.carrerChecked) {
             this.skill.carrerValue = this.skill.value;
-        }else{
-            this.skill.carrerValue =0;
+            let variable = this.skill.carrerValue - this.skill.basicValue;
+            this.skill.carrerValue = variable;
+        } else {
+            this.skill.carrerValue = 0;
         }
-        console.log(thisSkill);
+
+        // this.childMessage();
+
+        // console.log(variable);
+        /*         if (this.skill.carrerChecked) {
+                    this.skill.carrerValue = this.skill.value;
+                }else{
+                    this.skill.carrerValue =0;
+                }
+                console.log(thisSkill); */
+
+
     }
 
     changeHobbyPoint() {
         if (this.skill.hobbyChecked) {
             this.skill.hobbyValue = this.skill.value;
+            let variable = this.skill.hobbyValue - this.skill.basicValue;
+            this.skill.hobbyValue = variable;
         } else {
             this.skill.hobbyValue = 0;
         }
-        console.log(this);
+        // this.childMessage();
     }
 }
