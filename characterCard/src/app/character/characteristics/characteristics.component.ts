@@ -51,7 +51,7 @@ export class CharacteristicsComponent {
             ]
         };
         localStorage.setItem('statusData', JSON.stringify(saveStatusData));
-        alert('資料已儲存');
+        // alert('資料已儲存');
     }
 
     getStatusItem() {

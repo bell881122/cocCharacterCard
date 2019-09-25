@@ -3,20 +3,27 @@
         <h5 class="mb-0">{{subtitle}}</h5>
         <h1 class="mb-4">{{title}}</h1>
     </div>
+    <button type="button" class="btn btn-primary mr-2" 
+(click)="saveAll()"    (click)="myProfile.saveProfileData()"
+        (click)="myCharacteristics.saveStatusItem()">
+        Save All
+    </button>
+    <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
+        (click)="myCharacteristics.getStatusItem()">Load All</button>
+
     <div class="row mt-2">
         <div class="col">
             <div class="row">
                 <div class="col-3">
-                    <profile></profile>
+                    <profile #myProfile></profile>
                 </div>
                 <div class="col-9">
-                    <characteristics></characteristics>
+                    <characteristics #myCharacteristics></characteristics>
                 </div>
             </div>
         </div>
     </div>
     <skill-list></skill-list>
-
 
 
 </div>
