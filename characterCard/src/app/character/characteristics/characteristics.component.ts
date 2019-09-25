@@ -37,6 +37,19 @@ export class CharacteristicsComponent {
         { status: 'san', value: 0 },
     ];
 
+    saveStatusSubItems(){
+        let saveStatusSubItems = this.subItems;
+        localStorage.setItem('statusSubItemsData', JSON.stringify(saveStatusSubItems));
+    }
+
+    getStatusSubItems() {
+        let data = JSON.parse(localStorage.getItem('statusSubItemsData'));
+        this.subItems = data;
+    }
+    
+    // console.log(data);
+
+
     saveStatusItem() {
         let saveStatusData = {
             "statusData": [

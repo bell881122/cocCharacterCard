@@ -1,21 +1,25 @@
 <div class="container mt-3">
-    <div class="text-center">
-        <h5 class="mb-0">{{subtitle}}</h5>
-        <h1 class="mb-4">{{title}}</h1>
-    </div>
+
 
     <button type="button" class="btn btn-primary mr-2" 
         (click)="saveAll()"    
         (click)="myProfile.saveProfileData()"
-        (click)="myCharacteristics.saveStatusItem()">
+        (click)="myCharacteristics.saveStatusItem()"
+        (click)="myCharacteristics.saveStatusSubItems()"
+        >
         Save All
     </button>
     <button type="button" class="btn btn-primary mr-2" 
         (click)="myProfile.getProfileData()"
-        (click)="myCharacteristics.getStatusItem()">
+        (click)="myCharacteristics.getStatusItem()"
+        (click)="myCharacteristics.getStatusSubItems()"
+        >
         Load All
     </button>
-
+    <div class="text-center">
+        <h5 class="mb-0">{{subtitle}}</h5>
+        <h1 class="mb-4">{{title}}</h1>
+    </div>
     <div class="row mt-2">
         <div class="col">
             <div class="row">
