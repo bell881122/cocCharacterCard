@@ -7,16 +7,17 @@ import { ProfileComponent } from './profile/profile.component';
     templateUrl: 'character.component.html'
 })
 
-export class CharacterComponent implements AfterViewInit {
+export class CharacterComponent{
 
     // child to parent test
-    @ViewChild(ProfileComponent,{static:false}) child;
+    // export class CharacterComponent implements AfterViewInit {
+/*     @ViewChild(ProfileComponent,{static:false}) child;
     message: string;
 
     ngAfterViewInit() {
         this.message = this.child.profiledata[0];
     }
-
+ */
 
 
 
