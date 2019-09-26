@@ -1,14 +1,14 @@
 <div class="row d-flex  skill-group">
     <div class="col-2">
         <div class="row">
-            <div class="col skillTypePoint">
+            <div class="col skillTypePoint d-flex justify-content-center">
                 <input type="checkbox" name="skill.skillName" value="carrer" 
                 [checked]="skill.carrerChecked" (change)="skill.carrerChecked = !skill.carrerChecked"  (change)="changeCarrerPoint()">
                 <span class="checkbox">職</span><br>
             </div>
         </div>
         <div class="row">
-            <div class="col skillTypePoint">
+            <div class="col skillTypePoint d-flex justify-content-center">
                 <input type="checkbox" name="skill.skillName" value="hobby"
                  [checked]="skill.hobbyChecked"  (change)="skill.hobbyChecked = !skill.hobbyChecked"  (change)="changeHobbyPoint()">
                 <span class="checkbox">興</span><br>

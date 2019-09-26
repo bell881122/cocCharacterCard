@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
     height:1100px;
   }
   .skill-list > div{
-    width:23%;
+    width:22%;
   }
   `],
   providers: [
