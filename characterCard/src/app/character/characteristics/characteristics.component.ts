@@ -25,7 +25,7 @@ export class CharacteristicsComponent {
         this.subItems[4].value = this.items[2].value;
         this.subItems[5].value = this.items[2].value * 5;
 
-        console.log(this.items[7].value);
+        // console.log(this.items[7].value);
     }
 
     subItems = [
