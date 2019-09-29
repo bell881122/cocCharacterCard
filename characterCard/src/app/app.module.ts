@@ -14,7 +14,8 @@ import { HeadshotComponent } from './character/profile/headshot.component';
 import { SkillListComponent } from './character/skill-list/skill-list.component';
 import { SkillsComponent } from './character/skill-list/skills.component';
 import { SkillsService } from './character/skill-list/skills.service';
-import { DicehundredComponent } from './character/dicehundred/dicehundred.component';
+import { DicehundredComponent } from './character/dice/dicehundred/dicehundred.component';
+import { MutildiceComponent } from './character/dice/mutildice/mutildice.component';
 // import { DiceComponent } from './character/dice/dice.component';
 
 
@@ -31,6 +32,7 @@ import { DicehundredComponent } from './character/dicehundred/dicehundred.compon
     SkillListComponent,
     SkillsComponent,
     DicehundredComponent,
+    MutildiceComponent,
     // DiceComponent,
   ],
   imports: [
