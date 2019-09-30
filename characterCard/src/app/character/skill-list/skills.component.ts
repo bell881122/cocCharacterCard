@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
     selector: 'skills',
     templateUrl: 'skills.component.html',
@@ -32,9 +33,13 @@ import { Component, Input } from '@angular/core';
 
 
 export class SkillsComponent {
-    @Input() skill;
-    @Input() childMessage;
+    
+    constructor() { }
 
+    
+    @Input() skill;
+    @Input() getSkill;
+    
 
     changeCarrerPoint() {
         if (this.skill.carrerChecked) {
@@ -44,17 +49,6 @@ export class SkillsComponent {
         } else {
             this.skill.carrerValue = 0;
         }
-
-        // this.childMessage();
-
-        // console.log(variable);
-        /*         if (this.skill.carrerChecked) {
-                    this.skill.carrerValue = this.skill.value;
-                }else{
-                    this.skill.carrerValue =0;
-                }
-                console.log(thisSkill); */
-
 
     }
 
@@ -66,6 +60,8 @@ export class SkillsComponent {
         } else {
             this.skill.hobbyValue = 0;
         }
-        // this.childMessage();
+        // this.getSkill();
     }
+
+
 }

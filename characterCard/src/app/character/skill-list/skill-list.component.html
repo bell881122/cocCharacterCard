@@ -12,7 +12,7 @@
     <div class="skill-list d-flex flex-column flex-wrap">
         <div *ngFor="let s of skills" class="mb-2">
             <skills [skill]="s" class="d-flex"
-             (click)="getSkillTotal()" [childMessage]="getSkillTotal()"></skills>
+             (click)="getSkillTotal()" [getSkill]="getSkillTotal()"></skills>
         </div>
     </div>
 </div>

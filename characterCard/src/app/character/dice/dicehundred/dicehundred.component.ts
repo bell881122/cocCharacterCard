@@ -9,23 +9,30 @@ import { Component, Input } from '@angular/core';
 export class DicehundredComponent {
   @Input() skill;
 
-  diceData;
 
   getData() {
     let data;
-    data = Math.ceil(Math.random() * 100);
-    this.diceData = data;
-    console.log(this.skill.value);
-    console.log(this.diceData);
     let diceA = document.querySelector('#dice');
+    data = Math.ceil(Math.random() * 100);
+    diceA.textContent = data;
+    // console.log(diceA.textContent);
+
     if (data <= this.skill.value) {
-      diceA.setAttribute("style", "color:green;")
-      console.log(diceA);
-    } else if (data > this.skill.value) {
+      diceA.setAttribute("style", "color:#000;")
+      return;
+    } else if (data > this.skill.value && data <= 95 && data >= 6) {
       diceA.setAttribute("style", "color:red;")
+    } else if (data > 95) {
+      diceA.setAttribute("style", "color:purple;")
+    } else if (data < 6) {
+      diceA.setAttribute("style", "color:orange;")
     } else {
+      console.log(diceA);
       return;
     }
+
   }
+
+
 
 }
