@@ -1,40 +1,40 @@
-<button class="btn btn-outline-primary mr-2" 
-    data-toggle="modal" data-target="#mutiDiceModal" 
-    (click)="D3()">D3</button>
-<button class="btn btn-outline-primary mr-2" 
-    data-toggle="modal" data-target="#mutiDiceModal" 
-    (click)="D6()">D6</button>
-<button class="btn btn-outline-primary mr-2" 
-    data-toggle="modal" data-target="#mutiDiceModal" 
+<button class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#mutiDiceModal" (click)="D3()">D3</button>
+<button class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#mutiDiceModal" (click)="D6()">D6</button>
+<button class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#mutiDiceModal"
     (click)="D10()">D10</button>
-<button class="btn btn-outline-primary" 
-    data-toggle="modal" data-target="#mutiDiceModal" 
+<button class="btn btn-outline-primary  mr-2" data-toggle="modal" data-target="#mutiDiceModal"
     (click)="D100()">D100</button>
 
+<div class="d-flex ">
+    <input type="number" [(ngModel)]="diceCustom" class="customDiceNum rounded-left text-right">
+    <button class="btn-outline-primary bg-white border border-primary rounded-right" type="button" data-toggle="modal"
+        data-target="#mutiDiceModal" (click)="customDice()" id="button-addon2">N</button>
+</div>
+
+
+
 <!-- Modal -->
-<div class="modal fade" id="mutiDiceModal" tabindex="-1" role="dialog" 
-aria-labelledby="mutiDiceModalLabel"
+<div class="modal fade" id="mutiDiceModal" tabindex="-1" role="dialog" aria-labelledby="mutiDiceModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mt-4">
-                        <p class="text-center mb-4 h2">{{diceType}}面骰</p>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mt-4">
+                <p class="text-center mb-4 h2">{{diceType}}面骰</p>
                 <p class="text-center h5">請選擇骰數</p>
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-center">
                         <input type="number" class="mr-2" [(ngModel)]="diceNumber" min="1">
-                        <button type="button" class="btn btn-primary" 
-                        (click)="randomDice()">Rolling!</button>
+                        <button type="button" class="btn btn-primary" (click)="randomDice()">Rolling!</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-center">
-                        <p id="mutidice" class="dice">
+                        <p id="mutidice" class="mutidice">
                             {{diceData}}
                         </p>
                     </div>

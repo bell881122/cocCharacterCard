@@ -15,7 +15,6 @@ export class DicehundredComponent {
     let diceA = document.querySelector('#dice');
     data = Math.ceil(Math.random() * 100);
     diceA.textContent = data;
-    // console.log(diceA.textContent);
 
     if (data <= this.skill.value) {
       diceA.setAttribute("style", "color:#000;")
@@ -30,9 +29,6 @@ export class DicehundredComponent {
       console.log(diceA);
       return;
     }
-
   }
-
-
 
 }

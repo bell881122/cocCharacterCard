@@ -11,6 +11,7 @@ export class MutildiceComponent {
 
     diceType;
     diceNumber = 1;
+    diceCustom = 1;
     D3() {
         this.diceNumber = 1;
         this.diceType = 3;
@@ -29,6 +30,11 @@ export class MutildiceComponent {
     D100() {
         this.diceNumber = 1;
         this.diceType = 100;
+        this.diceData = '';
+    }
+    customDice() {
+        this.diceNumber = 1;
+        this.diceType = this.diceCustom;
         this.diceData = '';
     }
 
