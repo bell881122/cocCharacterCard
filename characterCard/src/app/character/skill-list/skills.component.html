@@ -16,9 +16,9 @@
         </div>
     </div>
     <div class="col-8 d-flex skill align-items-center px-0">
-        <label class="mr-2 mb-0 text-right">{{ skill.skillName }}</label>
-        <input type="number" name="skill.skillName" class="form-control" [(ngModel)]="skill.value"  (click)="changeCarrerPoint()"  (click)="changeHobbyPoint()">
+        <label class="mr-2 mb-0 text-center d-flex justify-content-center">{{ skill.skillName }}</label>
+        <input type="number" id="skillValue" name="skill.skillName" class="form-control" [(ngModel)]="skill.value"  (click)="changeCarrerPoint()"  (click)="changeHobbyPoint()">
         <span class="ml-1">%</span>
     </div>
-    <dicehundred class="col-2 pl-0" [skill]="skill"></dicehundred>
+    <dicehundred class="col-2 pl-0" [skillDice]="skill"></dicehundred>
 </div>

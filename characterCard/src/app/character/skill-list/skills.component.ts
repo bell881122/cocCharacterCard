@@ -1,13 +1,9 @@
 import { Component, Input } from '@angular/core';
 
-
 @Component({
     selector: 'skills',
     templateUrl: 'skills.component.html',
-/*     template: `
-
-    `,
- */    styles: [`
+    styles: [`
     .checkbox,
     input[type="checkbox"]{
         font-size:8px;
@@ -25,22 +21,19 @@ import { Component, Input } from '@angular/core';
     .skill{
         padding-left:0px;
     }
+    #skillValue{
+        width:55%;
+    }
     `]
-
-
 })
-
-
 
 export class SkillsComponent {
     
     constructor() { }
-
     
     @Input() skill;
     @Input() getSkill;
     
-
     changeCarrerPoint() {
         if (this.skill.carrerChecked) {
             this.skill.carrerValue = this.skill.value;
@@ -49,7 +42,6 @@ export class SkillsComponent {
         } else {
             this.skill.carrerValue = 0;
         }
-
     }
 
     changeHobbyPoint() {
@@ -60,8 +52,6 @@ export class SkillsComponent {
         } else {
             this.skill.hobbyValue = 0;
         }
-        // this.getSkill();
     }
-
 
 }

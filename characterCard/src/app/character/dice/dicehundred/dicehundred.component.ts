@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class DicehundredComponent {
-  @Input() skill;
+  @Input() skillDice;
 
 
   getData() {
@@ -16,10 +16,10 @@ export class DicehundredComponent {
     data = Math.ceil(Math.random() * 100);
     diceA.textContent = data;
 
-    if (data <= this.skill.value) {
+    if (data <= this.skillDice.value) {
       diceA.setAttribute("style", "color:#000;")
       return;
-    } else if (data > this.skill.value && data <= 95 && data >= 6) {
+    } else if (data > this.skillDice.value && data <= 95 && data >= 6) {
       diceA.setAttribute("style", "color:red;")
     } else if (data > 95) {
       diceA.setAttribute("style", "color:purple;")

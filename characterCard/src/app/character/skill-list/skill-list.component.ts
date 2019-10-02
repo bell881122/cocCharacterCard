@@ -8,11 +8,11 @@ import { NgForm } from '@angular/forms';
   templateUrl: './skill-list.component.html',
   // template:`  `,
   styles: [`
-  .skill-list{
-    height:1100px;
-  }
   .skill-list > div{
     width:22%;
+  }
+  .skill-list{
+    height: 800px;
   }
   `],
   providers: [
@@ -23,7 +23,6 @@ import { NgForm } from '@angular/forms';
 
 export class SkillListComponent implements OnInit {
   title = 'Skill List'
-  query;
 
   skills;
   items;
@@ -32,6 +31,13 @@ export class SkillListComponent implements OnInit {
     careerPoint: 0,
     hobbyPoint: 0
   };
+
+
+  skillTotalPoint =
+    {
+      carrer: 0,
+      hobby: 0
+    };
 
   careerTotalPoint;
   hobbyTotalPoint;
@@ -46,48 +52,59 @@ export class SkillListComponent implements OnInit {
     this.careerTotalPoint = this.skillTypePoint.careerPoint;
     this.hobbyTotalPoint = this.skillTypePoint.hobbyPoint;
   }
-
-
-
-
-  skillTotalPoint =
-    {
-      carrer: 0,
-      hobby: 0
-    };
-
-
-
-
-
-
-
-
-
+  
   // get skillTotalPoint
   getSkillTotal() {
     let varCareerTotalPoint = this.careerTotalPoint;
     let varHobbyTotalPoint = this.hobbyTotalPoint;
-
-
     this.skillTotalPoint.carrer = 0;
     this.skillTotalPoint.hobby = 0;
-    // setTimeout(() => {
-      for (let i = 0; i < this.skills.length; i++) {
-        this.skillTotalPoint.carrer += this.skills[i].carrerValue;
-        this.skillTotalPoint.hobby += this.skills[i].hobbyValue;
-      }
-    // }, 10);
 
+    for (let i = 0; i < this.skills.length; i++) {
+      this.skillTotalPoint.carrer += this.skills[i].carrerValue;
+      this.skillTotalPoint.hobby += this.skills[i].hobbyValue;
+    }
 
     varCareerTotalPoint -= this.skillTotalPoint.carrer;
     this.skillTypePoint.careerPoint = varCareerTotalPoint;
     varHobbyTotalPoint -= this.skillTotalPoint.hobby;
     this.skillTypePoint.hobbyPoint = varHobbyTotalPoint;
 
-
   }
 
-  ngOnInit() {}
+  // 新增技能
+  query;
+  newSkillName;
+  newSkillValue;
+  addSkill(f: NgForm): void {
+    let skillName = this.newSkillName;
+    let skillValue = this.newSkillValue;
+    let data = {
+      skillId: "",
+      skillName: skillName,
+      basicValue: skillValue,
+      value: skillValue,
+      carrerChecked: false,
+      hobbyChecked: false,
+      carrerValue: 0,
+      hobbyValue: 0
+    };
+    this.skills.push(data);
+    this.newSkillName = '';
+    this.newSkillValue = '初始值';
+    alert('技能已新增');
+  }
+
+  // 刪除技能
+  deleteSkillName;
+  deleteSkill() {
+    const findSkill = this.skills.filter(item => item.skillName === this.deleteSkillName);
+    const skillIndex = this.skills.indexOf(findSkill[0]);
+    this.skills.splice(skillIndex, 1);
+    this.deleteSkillName = '';
+    alert('技能已刪除');
+  }
+
+  ngOnInit() { }
 
 }
