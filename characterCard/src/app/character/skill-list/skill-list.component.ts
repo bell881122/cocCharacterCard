@@ -23,6 +23,7 @@ import { NgForm } from '@angular/forms';
 
 export class SkillListComponent implements OnInit {
   title = 'Skill List'
+  query;
 
   skills;
   items;
@@ -87,7 +88,6 @@ export class SkillListComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
