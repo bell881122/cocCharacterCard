@@ -5,7 +5,7 @@
             <div class="row d-flex">
                 <div *ngFor="let i of items;let index = index;" class="col-4 mb-2 d-flex">
                     <!-- <statusItem [item]="i" class=""></statusItem> -->
-                    <label class="mr-2">{{ i.status | uppercase}}</label>
+                    <label class="mr-2 my-auto">{{ i.status | uppercase }}</label>
                     <input type="number" class="form-control" [id]="i.status" [name]="i.status" [value]="i.value"
                         [(ngModel)]="i.value">
                 </div>
@@ -23,11 +23,8 @@
 <div class="border border-secondary rounded p-3">
     <div class="row d-flex">
         <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
-            <label class="mr-2">{{i.status| uppercase}}</label>
+            <label class="mr-2 my-auto" [id]="i.status">{{i.status| uppercase}}</label>
             <input type="number" class="form-control" [value]="i.value">
         </div>
     </div>
 </div>
-
-
-

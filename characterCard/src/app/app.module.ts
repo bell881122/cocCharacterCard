@@ -17,6 +17,7 @@ import { SkillsService } from './character/skill-list/skills.service';
 import { DicehundredComponent } from './character/dice/dicehundred/dicehundred.component';
 import { MutildiceComponent } from './character/dice/mutildice/mutildice.component';
 import { SearchFilterPipe } from './searchfilter.pipe';
+import { BackstoryComponent } from './character/otherdata/backstory.component';
 // import { DiceComponent } from './character/dice/dice.component';
 
 
@@ -35,6 +36,7 @@ import { SearchFilterPipe } from './searchfilter.pipe';
     DicehundredComponent,
     MutildiceComponent,
     SearchFilterPipe,
+    BackstoryComponent,
     // DiceComponent,
   ],
   imports: [

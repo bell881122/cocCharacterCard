@@ -2,11 +2,11 @@
 
 <div class="border border-secondary rounded p-3 my-2">
     <div class="d-flex align-items-center mb-4">
-        <p class="mr-5">職業點數：{{skillTypePoint.careerPoint}}</p>
-        <p class="mr-5">興趣點數：{{skillTypePoint.hobbyPoint}}</p>
-        <p class="mr-5">職業已配點數：{{skillTotalPoint.carrer}}</p>
-        <p class="mr-5">興趣已配點數：{{skillTotalPoint.hobby}}</p>
-        <input type="text" [(ngModel)]="query" placeholder="search skills...">
+        <p class="mr-5 my-auto">職業點數：{{skillTypePoint.careerPoint}}</p>
+        <p class="mr-5 my-auto">興趣點數：{{skillTypePoint.hobbyPoint}}</p>
+        <p class="mr-5 my-auto">職業已配點數：{{skillTotalPoint.carrer}}</p>
+        <p class="mr-5 my-auto">興趣已配點數：{{skillTotalPoint.hobby}}</p>
+        <input class="p-1" type="text" [(ngModel)]="query" placeholder="search skills...">
     </div>
     <!-- 技能列表 -->
     <div class="skill-list d-flex flex-column flex-wrap">

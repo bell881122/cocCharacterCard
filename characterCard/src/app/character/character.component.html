@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col d-flex mr-auto">
             <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-                (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()" (click)="mySkillList.saveSkillData()">
+                (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()" (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
                 Save All
             </button>
             <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
-                (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()" (click)="mySkillList.getSkillData()">
+                (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()" (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
                 Load All
             </button>
         </div>
@@ -31,4 +31,5 @@
         </div>
     </div>
     <skill-list #mySkillList></skill-list>
+    <backstory #myBackstory></backstory>
 </div>

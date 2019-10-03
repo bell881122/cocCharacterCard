@@ -1,0 +1,9 @@
+<h3 class="text-center mt-4">{{title}}</h3>
+<div class="border border-secondary rounded p-3 my-2">
+    <div class="row d-flex">
+        <div *ngFor="let b of backstorys" class="col-6 mb-2">
+            <p class="text-center">{{b.name}}</p>
+            <textarea class="w-100" [name]="b.id" [id]="b.id" cols="30" rows="5" [(ngModel)]="b.value"></textarea>
+        </div>
+    </div>
+</div>

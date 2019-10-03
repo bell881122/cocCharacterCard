@@ -5,7 +5,12 @@ import { StatusItemService } from './statusItem.service';
 @Component({
     selector: 'characteristics',
     templateUrl: 'characteristics.component.html',
-    providers: [StatusItemService]
+    providers: [StatusItemService],
+    styles:[`
+    #san{
+        color:red;
+    }
+    `]
 })
 
 export class CharacteristicsComponent {
