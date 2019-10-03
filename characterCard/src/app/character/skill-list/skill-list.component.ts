@@ -23,6 +23,7 @@ import { NgForm } from '@angular/forms';
 
 export class SkillListComponent implements OnInit {
   title = 'Skill List'
+  query;
 
   skills;
   items;
@@ -31,7 +32,6 @@ export class SkillListComponent implements OnInit {
     careerPoint: 0,
     hobbyPoint: 0
   };
-
 
   skillTotalPoint =
     {
@@ -52,7 +52,7 @@ export class SkillListComponent implements OnInit {
     this.careerTotalPoint = this.skillTypePoint.careerPoint;
     this.hobbyTotalPoint = this.skillTypePoint.hobbyPoint;
   }
-  
+
   // get skillTotalPoint
   getSkillTotal() {
     let varCareerTotalPoint = this.careerTotalPoint;
@@ -73,7 +73,6 @@ export class SkillListComponent implements OnInit {
   }
 
   // 新增技能
-  query;
   newSkillName;
   newSkillValue;
   addSkill(f: NgForm): void {
@@ -103,6 +102,26 @@ export class SkillListComponent implements OnInit {
     this.skills.splice(skillIndex, 1);
     this.deleteSkillName = '';
     alert('技能已刪除');
+  }
+
+  // 儲存技能
+  saveSkillData() {
+    let skillData = {
+      'skillData':
+      {
+        'skills': this.skills,
+        'skillTotal': [this.skillTypePoint, this.skillTotalPoint]
+      }
+    };
+    localStorage.setItem('skillData', JSON.stringify(skillData));
+  }
+  
+  // 讀取技能
+  getSkillData() {
+    let data = JSON.parse(localStorage.getItem('skillData'));
+    this.skills = data.skillData.skills;
+    this.skillTypePoint = data.skillData.skillTotal[0];
+    this.skillTotalPoint = data.skillData.skillTotal[1];
   }
 
   ngOnInit() { }
