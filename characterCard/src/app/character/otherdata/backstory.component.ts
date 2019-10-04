@@ -26,6 +26,16 @@ export class BackstoryComponent {
         { id: "encountersWithStrangeEntities", name: "遭遇怪異實體", value: "" },
     ];
 
+    backstoryOther=[
+        { id: "gearPosessions", name: "隨身物與所有物", value: "" },
+        { id: "cashAsset", name: "現金與資產", value: 
+`消費水平：
+現金：
+資產：` },
+        { id: "fellowInvestigators", name: "其他調查員", value: "" },
+        { id: "introduction", name: "簡介", value: "" },
+    ];
+
     backstorysData = [];
 
     saveBackstorys() {

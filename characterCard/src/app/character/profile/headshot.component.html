@@ -1,0 +1,15 @@
+<div class="hesdshot px-3">
+    <div class="headshot-img w-100">
+        <div class="border border-secondary rounded p-1">
+            <img [src]="imgUrl" alt="headshot">
+        </div>
+    </div>
+    <div class="input-group mt-1">
+        <input type="url" class="form-control" id="headshot" placeholder="圖片網址" aria-label="圖片網址"
+            aria-describedby="button-addon2" [(ngModel)]="inputImgUrl">
+        <div class="input-group-append">
+            <button class="btn btn-sm btn-outline-secondary" type="button" id="button-addon2"
+                (click)="updateHeadshot()">更新</button>
+        </div>
+    </div>
+</div>

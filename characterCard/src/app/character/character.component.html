@@ -2,11 +2,13 @@
     <div class="row">
         <div class="col d-flex mr-auto">
             <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-                (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()" (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
+                (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()"
+                (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
                 Save All
             </button>
             <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
-                (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()" (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
+                (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()"
+                (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
                 Load All
             </button>
         </div>
@@ -14,7 +16,7 @@
             <mutildice class="d-flex justify-content-end"></mutildice>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center mt-3">
         <h5 class="mb-0">{{subtitle}}</h5>
         <h1 class="mb-4">{{title}}</h1>
     </div>
@@ -32,4 +34,17 @@
     </div>
     <skill-list #mySkillList></skill-list>
     <backstory #myBackstory></backstory>
+    <div class="col d-flex mr-auto mb-3">
+        <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
+            (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()"
+            (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
+            Save All
+        </button>
+        <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
+            (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()"
+            (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
+            Load All
+        </button>
+    </div>
+
 </div>

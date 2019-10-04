@@ -1,9 +1,35 @@
-<h3 class="text-center mt-4">{{title}}</h3>
-<div class="border border-secondary rounded p-3 my-2">
-    <div class="row d-flex">
-        <div *ngFor="let b of backstorys" class="col-6 mb-2">
-            <p class="text-center">{{b.name}}</p>
-            <textarea class="w-100" [name]="b.id" [id]="b.id" cols="30" rows="5" [(ngModel)]="b.value"></textarea>
+<div class="mt-5">
+    <div class="row mb-3">
+        <div class="col-8">
+            <h5 class="text-center">{{backstoryOther[0].name}}</h5>
+            <textarea class="w-100 border border-secondary rounded p-3" [name]="backstoryOther[0].id"
+                [id]="backstoryOther[0].id" cols="30" rows="5" [(ngModel)]="backstoryOther[0].value"></textarea>
+        </div>
+        <div class="col-4">
+            <h5 class="text-center">{{backstoryOther[1].name}}</h5>
+            <textarea class="w-100 border border-secondary rounded p-3" [name]="backstoryOther[0].id"
+                [id]="backstoryOther[0].id" cols="30" rows="5" [(ngModel)]="backstoryOther[1].value"></textarea>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <h5 class="text-center">{{backstoryOther[2].name}}</h5>
+            <textarea class="w-100 border border-secondary rounded p-3" [name]="backstoryOther[2].id"
+                [id]="backstoryOther[2].id" cols="30" rows="5" [(ngModel)]="backstoryOther[2].value"></textarea>
+        </div>
+        <div class="col-6">
+            <h5 class="text-center">{{backstoryOther[3].name}}</h5>
+            <textarea class="w-100 border border-secondary rounded p-3" [name]="backstoryOther[3].id"
+                [id]="backstoryOther[3].id" cols="30" rows="5" [(ngModel)]="backstoryOther[3].value"></textarea>
+        </div>
+    </div>
+    <h3 class="text-center mt-4">{{title}}</h3>
+    <div class="border border-secondary rounded p-3 my-2">
+        <div class="row d-flex">
+            <div *ngFor="let b of backstorys" class="col-6 mb-2">
+                <p class="text-center">{{b.name}}</p>
+                <textarea class="w-100" [name]="b.id" [id]="b.id" cols="30" rows="5" [(ngModel)]="b.value"></textarea>
+            </div>
         </div>
     </div>
 </div>
