@@ -34,6 +34,9 @@ export class BackstoryComponent {
 資產：` },
         { id: "fellowInvestigators", name: "其他調查員", value: "" },
         { id: "introduction", name: "簡介", value: "" },
+        { id: "Note", name: "備註", value: "" },
+
+        
     ];
 
     backstorysData = [];
@@ -43,7 +46,7 @@ export class BackstoryComponent {
             // let a = document.querySelector('#' + this.backstorys[i].id);
             this.backstorysData[i] = this.backstorys[i].value;
         }
-        let data = { "backstorys": this.backstorysData };
+        let data = { "backstorys": [this.backstorysData, this.backstoryOther] };
         localStorage.setItem('backstorys', JSON.stringify(data));
     }
 
@@ -51,7 +54,10 @@ export class BackstoryComponent {
         let data = JSON.parse(localStorage.getItem('backstorys'));
         this.backstorysData = data.backstorys;
         for (let i = 0; i < this.backstorys.length; i++) {
-            this.backstorys[i].value = this.backstorysData[i];
+            this.backstorys[i].value = this.backstorysData[0][i];
+        }
+        for (let i = 0; i < this.backstoryOther.length; i++) {
+            this.backstoryOther[i].value = this.backstorysData[1][i].value;
         }
     }
 

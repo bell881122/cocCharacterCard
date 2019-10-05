@@ -40,7 +40,7 @@ export class ProfileComponent {
 
 
 
-    saveProfileData(f: NgForm): void {
+    saveProfileData() {
         let profiledata = {
             "profiledata": [
                 this.chName,

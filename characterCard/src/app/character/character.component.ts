@@ -28,10 +28,4 @@ export class CharacterComponent{
         alert('所有資料已儲存');
     }
 
-    saveCharacter() {
-
-    }
-
-    getCharacter() { }
-
 }
