@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom.scss
+// Option B: Include parts of Bootstrap
+@import "../src/bootstrap-scss/bootstrap";
+
+@import "../src/bootstrap-scss/variables";
+
+// Required
+// @import "../src/bootstrap-scss/functions";
+// @import "../src/bootstrap-scss/variables";
+// @import "../src/bootstrap-scss/mixins";
+
+// Optional
+
+
+textarea {
+    background-color: lighten($primary, 75%);
+}

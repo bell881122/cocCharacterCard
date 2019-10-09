@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAE,AAAA,SAAS,CAAC;EAER,MAAM,EAAE,KAAK;EACb,SAAS,EAAE,IAAI;CAChB;;AAED,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "mutildice.component.scss"
+    ],
+    "names": [],
+    "file": "mutildice.component.css"
+}

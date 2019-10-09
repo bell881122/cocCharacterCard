@@ -1,0 +1,13 @@
+.dice {
+  height: 100px;
+  font-size: 60px;
+}
+
+.success {
+  color: green;
+}
+
+.fail {
+  color: red;
+}
+/*# sourceMappingURL=dicehundred.component.css.map */
