@@ -1,0 +1,7 @@
+$primary: #614f2f;
+$primaryLight: lighten($primary, 65%);
+
+textarea {
+    resize: none;
+    background-color: $primaryLight;
+}

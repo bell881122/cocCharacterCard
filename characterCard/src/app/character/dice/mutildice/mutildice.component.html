@@ -5,9 +5,10 @@
 <button class="btn btn-outline-primary  mr-2" data-toggle="modal" data-target="#mutiDiceModal"
     (click)="D100()">D100</button>
 
+
 <div class="d-flex ">
-    <input type="number" [(ngModel)]="diceCustom" class="customDiceNum rounded-left text-right">
-    <button class="btn-outline-primary bg-white border border-primary rounded-right" type="button" data-toggle="modal"
+    <input style="background-color: $primaryLight;" type="number" [(ngModel)]="diceCustom" class="customDiceNum rounded-left text-right">
+    <button style="border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-outline-primary border border-primary rounded-right" type="button" data-toggle="modal"
         data-target="#mutiDiceModal" (click)="customDice()" id="button-addon2">N</button>
 </div>
 

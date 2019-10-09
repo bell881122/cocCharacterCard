@@ -3,11 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'backstory',
     templateUrl: 'backstory.component.html',
-    styles: [`
-    textarea{
-        resize: none;
-    }
-    `]
+    styleUrls: ['backstory.component.scss']
 })
 
 export class BackstoryComponent {
@@ -26,17 +22,18 @@ export class BackstoryComponent {
         { id: "encountersWithStrangeEntities", name: "遭遇怪異實體", value: "" },
     ];
 
-    backstoryOther=[
+    backstoryOther = [
         { id: "gearPosessions", name: "隨身物與所有物", value: "" },
-        { id: "cashAsset", name: "現金與資產", value: 
-`消費水平：
+        {
+            id: "cashAsset", name: "現金與資產", value:
+                `消費水平：
 現金：
 資產：` },
         { id: "fellowInvestigators", name: "其他調查員", value: "" },
         { id: "introduction", name: "簡介", value: "" },
         { id: "Note", name: "備註", value: "" },
 
-        
+
     ];
 
     backstorysData = [];

@@ -1,0 +1,14 @@
+  $primary: #614f2f; //$blue !default;
+  $primaryLight: lighten($primary, 65%);
+
+  .skill-list>div {
+      width: 22%;
+  }
+
+  .skill-list {
+      height: 1100px;
+  }
+
+  .searchSkills {
+      background-color: $primaryLight;
+  }

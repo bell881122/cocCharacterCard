@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
     }
     label{
         width:50%;
-        font-size:14px;
+        font-size:18px;
     }
     .skill-group{
         margin: 0px;

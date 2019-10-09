@@ -7,14 +7,7 @@ import { NgForm } from '@angular/forms';
   selector: 'skill-list',
   templateUrl: './skill-list.component.html',
   // template:`  `,
-  styles: [`
-  .skill-list > div{
-    width:22%;
-  }
-  .skill-list{
-    height: 1100px;
-  }
-  `],
+  styleUrls: ['skill-list.component.scss'],
   providers: [
     SkillsService,
     StatusItemService

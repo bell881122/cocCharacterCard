@@ -1,16 +1,24 @@
 // Custom.scss
 // Option B: Include parts of Bootstrap
-@import "../src/bootstrap-scss/bootstrap";
-
-@import "../src/bootstrap-scss/variables";
 
 // Required
-// @import "../src/bootstrap-scss/functions";
-// @import "../src/bootstrap-scss/variables";
-// @import "../src/bootstrap-scss/mixins";
-
+@import "../src/bootstrap-scss/bootstrap";
 // Optional
+@import "../src/bootstrap-scss/variables";
 
+body {
+    background-image: url(../src/assets/6050848756_7c3c114cfb_o.jpg);
+    background-size: 100% 100%;
+}
+
+.wrap {
+    color: #684000;
+    background-image: url(../src/assets/paper-68833.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 1300px;
+    margin: 0 auto;
+}
 
 textarea {
     background-color: lighten($primary, 75%);

@@ -4,7 +4,12 @@ import { ProfileComponent } from './profile/profile.component';
 
 @Component({
     selector: 'character',
-    templateUrl: 'character.component.html'
+    templateUrl: 'character.component.html',
+    styles:[`
+    img{
+        width:600px;
+    }
+    `]
 })
 
 export class CharacterComponent{

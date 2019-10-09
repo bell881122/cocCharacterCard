@@ -1,9 +1,15 @@
-  .mutidice {
-    //  background-color: #fff;
-    height: 100px;
-    font-size: 60px;
-  }
+$primary: #614f2f; //$blue !default;
+$primaryLight: lighten($primary, 65%);
 
-  .customDiceNum {
-    width: 45px;
-  }
+.mutidice {
+  //  background-color: #fff;
+  height: 100px;
+  font-size: 60px;
+}
+
+
+.customDiceNum {
+  width: 45px;
+  background-color: $primaryLight;
+
+}
