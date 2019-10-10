@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
     styles:[`
     img{
         width:600px;
+        height:auto;
     }
     `]
 })

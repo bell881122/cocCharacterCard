@@ -1,28 +1,29 @@
-   .headshot-img img {
-       width: 100%;
-       height: 140px;
-       object-fit: contain;
-   }
+ .headshot-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
 
-   .input-group input {
-       font-size: 14px;
-       height: 35px;
-   }
+.input-group input {
+    font-size: 14px;
+    height: 35px;
+}
 
-   .input-group button {
-       font-size: 14px;
-       height: 35px;
-   }
+.input-group button {
+    font-size: 14px;
+    height: 35px;
+}
 
-   /*    .hesdshot {
+/*    .hesdshot {
        position: relative;
    }
  */
-   .hesdshot {
-       //    position: absolute;
-       //    content: "";
+.hesdshot {
+    //    position: absolute;
+    //    content: "";
     //    border-left: 1px solid #6c757d;
-       border-bottom: 1px solid #6c757d;
-       margin-left: -1.5rem;
-       height: 212px;
-   }
+    border-bottom: 1px solid #6c757d;
+    margin-left: -1.5rem;
+    padding-left: 1.5rem;
+    height: 212px;
+}
