@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
 import { ProfileComponent } from './character/profile/profile.component';
 import { CharacteristicsComponent } from './character/characteristics/characteristics.component';
-import { StatusItemComponent } from './character/characteristics/statusItem.component';
+// import { StatusItemComponent } from './character/characteristics/statusItem.component';
 import { StatusItemService } from './character/characteristics/statusItem.service';
 import { HeadshotComponent } from './character/profile/headshot.component';
 import { SkillListComponent } from './character/skill-list/skill-list.component';
@@ -29,7 +29,7 @@ import { BackstoryComponent } from './character/otherdata/backstory.component';
     CharacterComponent,
     ProfileComponent,
     CharacteristicsComponent,
-    StatusItemComponent,
+    // StatusItemComponent,
     HeadshotComponent,
     SkillListComponent,
     SkillsComponent,

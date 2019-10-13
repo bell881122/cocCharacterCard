@@ -1,14 +1,14 @@
 <div class="container py-5 mt-3">
     <div class="row">
         <div class="col d-flex mr-auto">
-            <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-                (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()"
-                (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
+            <button type="button" class="btn btn-primary mr-2" (click)="myProfile.saveProfileData()"
+                (click)="myCharacteristics.saveStatus()" (click)="mySkillList.saveSkillData()"
+                (click)="myBackstory.saveBackstorys()"  (click)="saveAll()">
                 Save All
             </button>
             <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
-                (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()"
-                (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
+                (click)="myCharacteristics.getStatus()" (click)="mySkillList.getSkillData()"
+                (click)="myBackstory.getBackstorys()" (click)="getAll()">
                 Load All
             </button>
         </div>
@@ -29,7 +29,7 @@
                     <profile #myProfile></profile>
                 </div>
                 <div class="col-9">
-                    <characteristics #myCharacteristics></characteristics>
+                    <characteristics #myCharacteristics [getAllData]="getAllData"></characteristics>
                 </div>
             </div>
         </div>
@@ -38,12 +38,12 @@
     <backstory #myBackstory></backstory>
     <div class="col d-flex mr-auto mb-3">
         <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-            (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()"
+            (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatus()"
             (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
             Save All
         </button>
         <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
-            (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatusSubItems()"
+            (click)="myCharacteristics.getStatusItem()" (click)="myCharacteristics.getStatus()"
             (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">
             Load All
         </button>
