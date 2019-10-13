@@ -12,3 +12,13 @@
   .searchSkills {
       background-color: $primaryLight;
   }
+
+  .skillContent {
+      border: 20px solid transparent;
+      // padding: 15px;
+      -webkit-border-image: url(../../../assets/689426.png) 200 round;
+      /* Safari 3.1-5 */
+      -o-border-image: url(../../../assets/689426.png) 200 round;
+      /* Opera 11-12.1 */
+      border-image: url(../../../assets/689426.png) 200 round;
+  }

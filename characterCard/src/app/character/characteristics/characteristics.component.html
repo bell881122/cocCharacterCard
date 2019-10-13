@@ -1,7 +1,8 @@
-<div class="row">
+<div class="row d-flex">
     <div class="col-9">
         <h3 class="text-center">{{title}}</h3>
-        <div class="border-top border-left border-right border-secondary rounded-top p-3">
+        <!-- <div class="border-top border-left border-right border-secondary rounded-top p-3"> -->
+        <div class="characteristicsTop">
             <div class="row d-flex">
                 <div *ngFor="let i of items;let index = index;" class="col-4 mb-2 d-flex">
                     <!-- <statusItem [item]="i" class=""></statusItem> -->
@@ -9,7 +10,7 @@
                     <input type="number" class="form-control" [id]="i.status" [name]="i.status" [value]="i.value"
                         [(ngModel)]="i.value">
                 </div>
-<!--                 <button type="button" class="btn btn-primary mr-2" (click)="saveStatusItem()">Save</button>
+                <!--                 <button type="button" class="btn btn-primary mr-2" (click)="saveStatusItem()">Save</button>
                 <button type="button" class="btn btn-primary" (click)="getStatusItem()">Load</button> -->
             </div>
         </div>
@@ -20,7 +21,8 @@
     </div>
 </div>
 
-<div class="border-left border-bottom border-right border-secondary rounded-bottom p-3">
+<!-- <div class="border-left border-bottom border-right border-secondary rounded-bottom p-3"> -->
+<div class="characteristicsBottom">
     <div class="row d-flex">
         <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
             <label class="mr-2 my-auto" [id]="i.status">{{i.status| uppercase}}</label>

@@ -6,11 +6,7 @@ import { StatusItemService } from './statusItem.service';
     selector: 'characteristics',
     templateUrl: 'characteristics.component.html',
     providers: [StatusItemService],
-    styles:[`
-    #san{
-        color:red;
-    }
-    `]
+    styleUrls:['characteristics.component.scss']
 })
 
 export class CharacteristicsComponent {

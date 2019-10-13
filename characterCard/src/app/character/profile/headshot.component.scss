@@ -1,9 +1,3 @@
- .headshot-img img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
 .input-group input {
     font-size: 14px;
     height: 35px;
@@ -14,16 +8,29 @@
     height: 35px;
 }
 
-/*    .hesdshot {
-       position: relative;
-   }
- */
 .hesdshot {
     //    position: absolute;
     //    content: "";
     //    border-left: 1px solid #6c757d;
-    border-bottom: 1px solid #6c757d;
-    margin-left: -1.5rem;
-    padding-left: 1.5rem;
-    height: 212px;
+    // border-bottom: 1px solid #6c757d;
+    margin-left: -1rem;
+    padding-left: 1rem;
+}
+
+.headshot-img {
+    border: 20px solid transparent;
+    padding: 0;
+    -webkit-border-image: url(../../../assets/689426.png) 200 round;
+    /* Safari 3.1-5 */
+    -o-border-image: url(../../../assets/689426.png) 200 round;
+    /* Opera 11-12.1 */
+    border-image: url(../../../assets/689426.png) 200 round;
+}
+
+.headshot-img img {
+    width: 124%;
+    height: 160px;
+    object-fit: cover;
+    //  position: absolute;
+    margin: -12%;
 }

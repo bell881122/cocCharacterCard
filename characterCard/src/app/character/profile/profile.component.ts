@@ -5,12 +5,7 @@ import { NgForm } from '@angular/forms';
 @Component({
     selector: 'profile',
     templateUrl: 'profile.component.html',
-    styles: [`
-    label{
-        font-size:12px;
-        margin-right:10px;
-    }
-    `]
+    styleUrls:['profile.component.scss']
 })
 
 export class ProfileComponent {
