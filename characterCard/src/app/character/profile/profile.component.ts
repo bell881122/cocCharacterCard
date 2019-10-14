@@ -49,7 +49,7 @@ export class ProfileComponent {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
 
         if (data.profiledata == undefined) {
-            alert('找不到該角色卡資料');
+            return;
         } else {
             this.chName = data.profiledata[0];
             this.plName = data.profiledata[1];

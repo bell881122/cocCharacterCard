@@ -53,7 +53,7 @@ export class SkillListComponent implements AfterViewInit {
   // }
 
   ngAfterViewInit() {
-    console.log(this.skillTypePoint);
+    // console.log(this.skillTypePoint);
   }
 
 
