@@ -1,11 +1,11 @@
 import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { ProfileComponent } from './profile/profile.component';
+import { IfStmt } from '@angular/compiler';
 
 
 @Component({
     selector: 'character',
     templateUrl: 'character.component.html',
-    styles:[`
+    styles: [`
     img{
         width:600px;
         height:auto;
@@ -13,25 +13,24 @@ import { ProfileComponent } from './profile/profile.component';
     `]
 })
 
-export class CharacterComponent{
+export class CharacterComponent {
 
-    // child to parent test
-    // export class CharacterComponent implements AfterViewInit {
-/*     @ViewChild(ProfileComponent,{static:false}) child;
-    message: string;
-
-    ngAfterViewInit() {
-        this.message = this.child.profiledata[0];
+    ngOnInit() {
+        if (localStorage.getItem(this.CHcard) === null) {
+            let data = { "Charactor": this.CHcard };
+            localStorage.setItem(this.CHcard, JSON.stringify(data));
+        }
+        console.log(JSON.parse(localStorage.getItem(this.CHcard)));
     }
- */
-
-
 
     title = `Character Card`
     subtitle = `CALL Of CTHULHU`;
 
+    charactorNum = 1
+    CHcard = 'CH' + this.charactorNum;
+
     saveAll() {
-        alert('所有資料已儲存');
+        // alert('所有資料已儲存');
     }
 
 }

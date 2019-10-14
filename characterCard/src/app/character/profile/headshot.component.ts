@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
     selector:'headshot',
@@ -9,8 +9,18 @@ import { Component } from '@angular/core';
 export class HeadshotComponent{
     // imgUrl = "https://image.flaticon.com/icons/png/512/55/55089.png";
     imgUrl ="../../../assets/character-273364_1920.jpg";
-    inputImgUrl;
+    inputImgUrl='';
+
+    @Input() CHcard;
     updateHeadshot(){
-        this.imgUrl =this.inputImgUrl;
+        let data = /^http/;
+        if (this.inputImgUrl.match(data)){
+            this.imgUrl =this.inputImgUrl;
+        }
     }
+
+    getHeadshot(){
+        this.imgUrl = this.inputImgUrl;
+    }
+
 }

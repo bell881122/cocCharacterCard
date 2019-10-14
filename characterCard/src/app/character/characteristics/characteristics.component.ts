@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { StatusItemService } from './statusItem.service';
+import { HeadshotComponent } from '../profile/headshot.component';
 
 @Component({
     selector: 'characteristics',
     templateUrl: 'characteristics.component.html',
     providers: [StatusItemService],
-    styleUrls:['characteristics.component.scss']
+    styleUrls: ['characteristics.component.scss']
 })
 
-export class CharacteristicsComponent {
+export class CharacteristicsComponent implements AfterViewInit {
     title = `Characteristics`;
 
-    items;
+    
+    @Input() CHcard;
+    
 
+
+    items;
 
     constructor(statusItemService: StatusItemService) {
         this.items = statusItemService.getItems();
@@ -26,7 +31,6 @@ export class CharacteristicsComponent {
         this.subItems[4].value = this.items[2].value;
         this.subItems[5].value = this.items[2].value * 5;
 
-        // console.log(this.items[7].value);
     }
 
     subItems = [
@@ -38,21 +42,12 @@ export class CharacteristicsComponent {
         { status: 'san', value: 0 },
     ];
 
-    saveStatusSubItems(){
-        let saveStatusSubItems = this.subItems;
-        localStorage.setItem('statusSubItemsData', JSON.stringify(saveStatusSubItems));
+    @ViewChild(HeadshotComponent, { static: false }) headshot: HeadshotComponent;
+    ngAfterViewInit() {
     }
 
-    getStatusSubItems() {
-        let data = JSON.parse(localStorage.getItem('statusSubItemsData'));
-        this.subItems = data;
-    }
-    
-    // console.log(data);
-
-
-    saveStatusItem() {
-        let saveStatusData = {
+    saveStatus() {
+        let Data1 = {
             "statusData": [
                 this.items[0].value,
                 this.items[1].value,
@@ -64,21 +59,33 @@ export class CharacteristicsComponent {
                 this.items[7].value
             ]
         };
-        localStorage.setItem('statusData', JSON.stringify(saveStatusData));
-        // alert('資料已儲存');
+        let Data2 = { "statusSubData": this.subItems };
+        let saveStatusData = [Data1, Data2];
+
+        let data = JSON.parse(localStorage.getItem(this.CHcard));
+        data.saveStatusData = saveStatusData;
+        data.headshotUrl = this.headshot.inputImgUrl;
+        localStorage.setItem(this.CHcard, JSON.stringify(data));
     }
 
-    getStatusItem() {
-        let data = JSON.parse(localStorage.getItem('statusData'));
-        this.items[0].value = data['statusData'][0];
-        this.items[1].value = data['statusData'][1];
-        this.items[2].value = data['statusData'][2];
-        this.items[3].value = data['statusData'][3];
-        this.items[4].value = data['statusData'][4];
-        this.items[5].value = data['statusData'][5];
-        this.items[6].value = data['statusData'][6];
-        this.items[7].value = data['statusData'][7];
-    }
+    getStatus() {
+        let data = JSON.parse(localStorage.getItem(this.CHcard));
+        if (data.saveStatusData != undefined) {
+            this.subItems = data.saveStatusData[1].statusSubData;
+            this.items[0].value = data.saveStatusData[0].statusData[0];
+            this.items[1].value = data.saveStatusData[0].statusData[1];
+            this.items[2].value = data.saveStatusData[0].statusData[2];
+            this.items[3].value = data.saveStatusData[0].statusData[3];
+            this.items[4].value = data.saveStatusData[0].statusData[4];
+            this.items[5].value = data.saveStatusData[0].statusData[5];
+            this.items[6].value = data.saveStatusData[0].statusData[6];
+            this.items[7].value = data.saveStatusData[0].statusData[7];
+            this.headshot.inputImgUrl = data.headshotUrl;
+            this.headshot.getHeadshot();
 
+        } else {
+            return;
+        }
+    }
 
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ReturnStatement } from '@angular/compiler';
 
 @Component({
     selector: 'backstory',
@@ -37,25 +38,37 @@ export class BackstoryComponent {
     ];
 
     backstorysData = [];
+    @Input() CHcard;
 
     saveBackstorys() {
         for (let i = 0; i < this.backstorys.length; i++) {
             // let a = document.querySelector('#' + this.backstorys[i].id);
             this.backstorysData[i] = this.backstorys[i].value;
         }
-        let data = { "backstorys": [this.backstorysData, this.backstoryOther] };
-        localStorage.setItem('backstorys', JSON.stringify(data));
+        let backstorys = [this.backstorysData, this.backstoryOther];
+
+        let data = JSON.parse(localStorage.getItem(this.CHcard));
+        data.backstorys = backstorys;
+        localStorage.setItem(this.CHcard, JSON.stringify(data));
+
     }
 
     getBackstorys() {
-        let data = JSON.parse(localStorage.getItem('backstorys'));
-        this.backstorysData = data.backstorys;
-        for (let i = 0; i < this.backstorys.length; i++) {
-            this.backstorys[i].value = this.backstorysData[0][i];
+
+        let data = JSON.parse(localStorage.getItem(this.CHcard));
+
+        if (data.backstorys != undefined) {
+            this.backstorysData = data.backstorys;
+            for (let i = 0; i < this.backstorys.length; i++) {
+                this.backstorys[i].value = this.backstorysData[0][i];
+            }
+            for (let i = 0; i < this.backstoryOther.length; i++) {
+                this.backstoryOther[i].value = this.backstorysData[1][i].value;
+            }
+        } else {
+            return;
         }
-        for (let i = 0; i < this.backstoryOther.length; i++) {
-            this.backstoryOther[i].value = this.backstorysData[1][i].value;
-        }
+
     }
 
 }
