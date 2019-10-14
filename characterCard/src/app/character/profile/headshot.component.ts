@@ -8,7 +8,8 @@ import { Component,Input } from '@angular/core';
 
 export class HeadshotComponent{
     // imgUrl = "https://image.flaticon.com/icons/png/512/55/55089.png";
-    imgUrl ="../../../assets/character-273364_1920.jpg";
+    defaultUrl = "../../../assets/character-273364_1920.jpg"
+    imgUrl = this.defaultUrl;
     inputImgUrl='';
 
     @Input() CHcard;
@@ -20,7 +21,11 @@ export class HeadshotComponent{
     }
 
     getHeadshot(){
-        this.imgUrl = this.inputImgUrl;
+        if (this.inputImgUrl == ""){
+            this.imgUrl = "../../../assets/character-273364_1920.jpg";
+        }else{
+            this.imgUrl = this.inputImgUrl;
+        }
     }
 
 }

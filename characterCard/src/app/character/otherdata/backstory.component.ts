@@ -57,7 +57,9 @@ export class BackstoryComponent {
 
         let data = JSON.parse(localStorage.getItem(this.CHcard));
 
-        if (data.backstorys != undefined) {
+        if (data.backstorys == undefined) {
+            return;
+        } else {
             this.backstorysData = data.backstorys;
             for (let i = 0; i < this.backstorys.length; i++) {
                 this.backstorys[i].value = this.backstorysData[0][i];
@@ -65,8 +67,6 @@ export class BackstoryComponent {
             for (let i = 0; i < this.backstoryOther.length; i++) {
                 this.backstoryOther[i].value = this.backstorysData[1][i].value;
             }
-        } else {
-            return;
         }
 
     }

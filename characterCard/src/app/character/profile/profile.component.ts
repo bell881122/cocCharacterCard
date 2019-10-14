@@ -47,17 +47,16 @@ export class ProfileComponent {
 
     getProfileData() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
-        // console.log(data);
 
-        if (data.profiledata != undefined) {
+        if (data.profiledata == undefined) {
+            alert('找不到該角色卡資料');
+        } else {
             this.chName = data.profiledata[0];
             this.plName = data.profiledata[1];
             this.age = data.profiledata[2];
             this.gender = data.profiledata[3];
             this.occupation = data.profiledata[4];
             this.birthplace = data.profiledata[5];
-        } else {
-            alert('找不到該角色卡資料');
         }
         // console.log(profiledata);
     }

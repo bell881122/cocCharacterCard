@@ -13,9 +13,9 @@ import { HeadshotComponent } from '../profile/headshot.component';
 export class CharacteristicsComponent implements AfterViewInit {
     title = `Characteristics`;
 
-    
+
     @Input() CHcard;
-    
+
 
 
     items;
@@ -70,7 +70,9 @@ export class CharacteristicsComponent implements AfterViewInit {
 
     getStatus() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
-        if (data.saveStatusData != undefined) {
+        if (data.saveStatusData == undefined) {
+            return;
+        } else {
             this.subItems = data.saveStatusData[1].statusSubData;
             this.items[0].value = data.saveStatusData[0].statusData[0];
             this.items[1].value = data.saveStatusData[0].statusData[1];
@@ -83,8 +85,6 @@ export class CharacteristicsComponent implements AfterViewInit {
             this.headshot.inputImgUrl = data.headshotUrl;
             this.headshot.getHeadshot();
 
-        } else {
-            return;
         }
     }
 

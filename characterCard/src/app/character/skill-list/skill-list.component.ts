@@ -70,7 +70,7 @@ export class SkillListComponent implements AfterViewInit {
       this.skillTotalPoint.hobby += this.skills[i].hobbyValue;
     }
     
-    console.log(varCareerTotalPoint);
+    // console.log(varCareerTotalPoint);
     varCareerTotalPoint -= this.skillTotalPoint.carrer;
     this.skillTypePoint.careerPoint = varCareerTotalPoint;
     varHobbyTotalPoint -= this.skillTotalPoint.hobby;
@@ -133,7 +133,9 @@ export class SkillListComponent implements AfterViewInit {
 
     let data = JSON.parse(localStorage.getItem(this.CHcard));
 
-    if (data.skillData != undefined) {
+    if (data.skillData == undefined) {
+      return;
+    } else {
       this.skills = data.skillData.skills;
       this.skillTypePoint = data.skillData.skillTotal[0];
       this.skillTotalPoint = data.skillData.skillTotal[1];
@@ -141,8 +143,6 @@ export class SkillListComponent implements AfterViewInit {
       console.log(this.skillTypePoint.careerPoint);
       console.log(this.careerTotalPoint);
       // this.skillTotalPoint = data.skillData.skillTotal[1];
-    } else {
-      return;
     }
     // console.log(this.skillTypePoint);
 
