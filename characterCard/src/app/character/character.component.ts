@@ -34,7 +34,7 @@ export class CharacterComponent {
         }
         this.lastCard = this.CHcard;
         // console.log(this.chCardBox);
-        // localStorage.removeItem("aaa");
+        // localStorage.removeItem("My Charactor Card");
     }
 
     checkoutCHcard;
@@ -72,9 +72,9 @@ export class CharacterComponent {
         this.addNewCHcardData = "";
     }
 
-    DontSave(){
+    DontSave() {
         this.CHcard = this.lastCard;
-    }    
+    }
     // console.log(this.addNewCHcardData);
 
     saveAll() {
@@ -84,8 +84,18 @@ export class CharacterComponent {
             this.chCardBox.push(data["Charactor"]);
         }
         this.addNewCHcardData = "";
-        // alert('所有資料已儲存');
+        alert('所有資料已儲存');
         // console.log(this.chCardBox);
     }
+
+    // json檔案
+    downloadJson() {
+        let a = document.getElementById('saveJson');
+        console.log(a);
+        // var blob = new Blob([JSON.stringify(this.CHcard)], { type: "" });
+        // a.downlo
+        // saveAs(blob, "CoCcharactor.json");
+    }
+
 
 }
