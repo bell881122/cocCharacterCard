@@ -16,7 +16,7 @@
                         <div class="row" style="margin:0 15px;">
                             <a href="/" class="d-block w-100 text-white" data-toggle="modal"
                                 data-target="#saveChCard">Save New</a>
-                            <a href="#" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()">Save As</a>
+                            <a [href]="jsonData" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out Put</a>
                             <!-- <script>
                                 // document.getElementById('saveJson').onclick = function (e) {
                                     function downloadJson(e){

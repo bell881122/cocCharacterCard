@@ -89,9 +89,33 @@ export class CharacterComponent {
     }
 
     // json檔案
+    jsonData;
     downloadJson() {
-        let a = document.getElementById('saveJson');
-        console.log(a);
+
+        let data = localStorage.getItem(this.CHcard);
+        this.jsonData =
+            `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+${data}    
+</body>
+</html>
+        `;
+
+        let jsonUrl = this.jsonData;
+        // document.write(
+        window.open(jsonUrl.toHtmlObject);
+
+        console.log(this.jsonData);
+
+        // let a = document.getElementById('saveJson');
+
         // var blob = new Blob([JSON.stringify(this.CHcard)], { type: "" });
         // a.downlo
         // saveAs(blob, "CoCcharactor.json");
