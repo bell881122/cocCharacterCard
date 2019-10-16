@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'character',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
     img{
         width:600px;
         height:auto;
+    }
+    #saveJson:hover{
+        text-decoration-line: underline;
+        cursor:pointer;
     }
     `]
 })
@@ -34,7 +39,7 @@ export class CharacterComponent {
         }
         this.lastCard = this.CHcard;
         // console.log(this.chCardBox);
-        // localStorage.removeItem("My Charactor Card");
+        // localStorage.removeItem("My Card");
     }
 
     checkoutCHcard;
@@ -92,34 +97,27 @@ export class CharacterComponent {
     jsonData;
     downloadJson() {
 
-        let data = localStorage.getItem(this.CHcard);
-        this.jsonData =
-            `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-${data}    
-</body>
-</html>
-        `;
-
-        let jsonUrl = this.jsonData;
-        // document.write(
-        window.open(jsonUrl.toHtmlObject);
-
-        console.log(this.jsonData);
-
-        // let a = document.getElementById('saveJson');
-
-        // var blob = new Blob([JSON.stringify(this.CHcard)], { type: "" });
-        // a.downlo
-        // saveAs(blob, "CoCcharactor.json");
+        var fileName = "mycard.txt";//匯出的檔名
+        var data = localStorage.getItem(this.CHcard);
+        var blob = new Blob([data], {
+            type: "application/octet-stream"
+        });
+        var href = URL.createObjectURL(blob);
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.href = href;
+        link.download = fileName;
+        link.click();
     }
+
+    cardName;
+    loadJson;
+
+    loadJsonFile() {
+        this.CHcard = this.cardName;
+        localStorage.setItem(this.CHcard, this.loadJson);
+    }
+
 
 
 }

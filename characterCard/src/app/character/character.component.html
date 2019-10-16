@@ -16,7 +16,10 @@
                         <div class="row" style="margin:0 15px;">
                             <a href="/" class="d-block w-100 text-white" data-toggle="modal"
                                 data-target="#saveChCard">Save New</a>
-                            <a [href]="jsonData" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out Put</a>
+                            <a style="#saveJson:hover{}" id="saveJson" class="d-block w-100 text-white"
+                                (click)="downloadJson()">Out Put</a>
+                            <!-- <a [href]="jsonData" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out Put</a> -->
+                            <!-- <a href="./characteristics/characteristics.component.html" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out</a> -->
                             <!-- <script>
                                 // document.getElementById('saveJson').onclick = function (e) {
                                     function downloadJson(e){
@@ -114,11 +117,20 @@
             <div class="modal-body mt-2 border-top">
                 <p class="text-center h5">讀取現成檔案</p>
                 <p class="text-center"><small>※請以筆記本打開json檔，複製所有文字貼上</small></p>
-                <input type="text" class="form-control">
-                <button type="button" class="btn btn-primary">Load</button>
-
+                <div class="d-flex">
+                    <div class="col-3">
+                        <label for="cardName"><small>角色卡名稱</small></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="cardName" class="form-control mb-2" [(ngModel)]="cardName">
+                    </div>
+                </div>
+                <input type="text" class="form-control" name="first" [(ngModel)]="loadJson">
+                <button type="submit" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
+                    aria-label="Close" (click)="loadJsonFile()" (click)="myProfile.getProfileData()"
+                    (click)="myCharacteristics.getStatus()" (click)="mySkillList.getSkillData()"
+                    (click)="myBackstory.getBackstorys()">Load</button>
             </div>
-
         </div>
     </div>
 </div>
