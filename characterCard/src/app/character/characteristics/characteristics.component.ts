@@ -1,5 +1,4 @@
 import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { StatusItemService } from './statusItem.service';
 import { HeadshotComponent } from '../profile/headshot.component';
 
@@ -47,6 +46,8 @@ export class CharacteristicsComponent implements AfterViewInit {
     }
 
     saveStatus() {
+        // console.log("aa");
+
         let Data1 = {
             "statusData": [
                 this.items[0].value,
@@ -60,16 +61,20 @@ export class CharacteristicsComponent implements AfterViewInit {
             ]
         };
         let Data2 = { "statusSubData": this.subItems };
+        console.log(this.subItems);
         let saveStatusData = [Data1, Data2];
 
         let data = JSON.parse(localStorage.getItem(this.CHcard));
         data.saveStatusData = saveStatusData;
         data.headshotUrl = this.headshot.inputImgUrl;
         localStorage.setItem(this.CHcard, JSON.stringify(data));
+
     }
 
     getStatus() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
+        console.log(data.saveStatusData);
+
         if (data.saveStatusData == undefined) {
             return;
         } else {

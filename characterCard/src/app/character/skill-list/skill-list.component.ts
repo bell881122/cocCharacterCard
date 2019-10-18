@@ -140,8 +140,8 @@ export class SkillListComponent implements AfterViewInit {
       this.skillTypePoint = data.skillData.skillTotal[0];
       this.skillTotalPoint = data.skillData.skillTotal[1];
 
-      console.log(this.skillTypePoint.careerPoint);
-      console.log(this.careerTotalPoint);
+      // console.log(this.skillTypePoint.careerPoint);
+      // console.log(this.careerTotalPoint);
       // this.skillTotalPoint = data.skillData.skillTotal[1];
     }
     // console.log(this.skillTypePoint);

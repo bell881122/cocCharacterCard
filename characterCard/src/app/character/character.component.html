@@ -3,9 +3,7 @@
         <div class="col d-flex mr-auto">
 
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-primary" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-                    (click)="myCharacteristics.saveStatus()" (click)="mySkillList.saveSkillData()"
-                    (click)="myBackstory.saveBackstorys()">
+                <button type="button" class="btn btn-primary" (click)="saveAll()">
                     Save
                 </button>
                 <div class="btn-group mr-2" role="group">
@@ -16,8 +14,7 @@
                         <div class="row" style="margin:0 15px;">
                             <a href="/" class="d-block w-100 text-white" data-toggle="modal"
                                 data-target="#saveChCard">Save New</a>
-                            <a style="#saveJson:hover{}" id="saveJson" class="d-block w-100 text-white"
-                                (click)="downloadJson()">Out Put</a>
+                            <a id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()">Out Put</a>
                             <!-- <a [href]="jsonData" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out Put</a> -->
                             <!-- <a href="./characteristics/characteristics.component.html" id="saveJson" class="d-block w-100 text-white" (click)="downloadJson()" target="_blank">Out</a> -->
                             <!-- <script>
@@ -64,21 +61,10 @@
         </div>
     </div>
 
-
-    <!-- <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
-        (click)="myCharacteristics.saveStatus()" (click)="mySkillList.saveSkillData()"
-        (click)="myBackstory.saveBackstorys()">
-        Save All
-    </button>
-    <button type="button" class="btn btn-primary mr-2" (click)="myProfile.getProfileData()"
-        (click)="myCharacteristics.getStatus()" (click)="mySkillList.getSkillData()"
-        (click)="myBackstory.getBackstorys()">
-        Load All
-    </button> -->
-
     <skill-list #mySkillList [CHcard]="CHcard"></skill-list>
     <backstory #myBackstory [CHcard]="CHcard"></backstory>
-    <div class="col d-flex mr-auto mb-3">
+    
+    <!-- <div class="col d-flex mr-auto mb-3">
         <button type="button" class="btn btn-primary mr-2" (click)="saveAll()" (click)="myProfile.saveProfileData()"
             (click)="myCharacteristics.saveStatusItem()" (click)="myCharacteristics.saveStatusSubItems()"
             (click)="mySkillList.saveSkillData()" (click)="myBackstory.saveBackstorys()">
@@ -89,7 +75,7 @@
             (click)="myBackstory.getBackstorys()">
             Load All
         </button>
-    </div>
+    </div> -->
 
 </div>
 
@@ -111,8 +97,7 @@
                     <input type="radio" name="c" value="c" class="mx-1" (click)="chooseCard(c)">{{c}}<br />
                 </div>
                 <button type="button" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
-                    aria-label="Close" (click)="myProfile.getProfileData()" (click)="myCharacteristics.getStatus()"
-                    (click)="mySkillList.getSkillData()" (click)="myBackstory.getBackstorys()">Load</button>
+                    aria-label="Close" (click)="checkoutCard()">Load</button>
             </div>
             <div class="modal-body mt-2 border-top">
                 <p class="text-center h5">讀取現成檔案</p>
@@ -127,9 +112,7 @@
                 </div>
                 <input type="text" class="form-control" name="first" [(ngModel)]="loadJson">
                 <button type="submit" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
-                    aria-label="Close" (click)="loadJsonFile()" (click)="myProfile.getProfileData()"
-                    (click)="myCharacteristics.getStatus()" (click)="mySkillList.getSkillData()"
-                    (click)="myBackstory.getBackstorys()">Load</button>
+                    aria-label="Close" (click)="loadJsonFile()" (click)="getAll()">Load</button>
             </div>
         </div>
     </div>
@@ -162,18 +145,8 @@
                             <div class="col-12 mt-3 text-center">
                                 <p class="mb-1">確認儲存此角色卡？</p>
                                 <p class="text-danger"><small>※如果已有同名檔案，將會覆蓋原檔案！</small></p>
-                                <!-- <button class="btn btn-danger" (click)="addNewFalse()" (mouseup)="saveAll()"
-                                    (mouseup)="myProfile.saveProfileData()" (mouseup)="myCharacteristics.saveStatus()"
-                                    (mouseup)="mySkillList.saveSkillData()" (mouseup)="myBackstory.saveBackstorys()">
-                                    Yes
-                                </button>
-                                <button type="button" class="btn btn-outline-primary" (click)="addNewFalse()"
-                                    (click)="DontSave()">No</button> -->
                                 <button type="button" class="btn btn-danger mx-1" class="btn btn-danger"
-                                    data-dismiss="modal" (click)="addNewFalse()" (mouseup)="saveAll()"
-                                    (mouseup)="myProfile.saveProfileData()" (mouseup)="myCharacteristics.saveStatus()"
-                                    (mouseup)="mySkillList.saveSkillData()"
-                                    (mouseup)="myBackstory.saveBackstorys()">Save changes</button>
+                                    data-dismiss="modal" (click)="addNewFalse()" (mouseup)="saveAll()">Save changes</button>
                                 <button type="button" class="btn btn-outline-primary mx-1" data-dismiss="modal"
                                     (click)="addNewFalse()" (click)="DontSave()">Close</button>
                             </div>

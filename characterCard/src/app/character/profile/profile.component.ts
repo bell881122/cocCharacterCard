@@ -47,7 +47,7 @@ export class ProfileComponent {
 
     getProfileData() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
-
+        // console.log(data);
         if (data.profiledata == undefined) {
             return;
         } else {

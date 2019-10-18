@@ -26,7 +26,7 @@
     <div class="row d-flex">
         <div *ngFor="let i of subItems" class="col-4 mb-2 d-flex">
             <label class="mr-2 my-auto" [id]="i.status">{{i.status| uppercase}}</label>
-            <input type="number" class="form-control" [value]="i.value">
+            <input type="number" class="form-control" [value]="i.value" [(ngModel)]="i.value">
         </div>
     </div>
 </div>
