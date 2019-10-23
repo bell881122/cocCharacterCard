@@ -110,9 +110,24 @@
                         <input type="text" id="cardName" class="form-control mb-2" [(ngModel)]="cardName">
                     </div>
                 </div>
-                <input type="text" class="form-control" name="first" [(ngModel)]="loadJson">
+<div class="custom-file">
+    <input type="file" class="custom-file-input" id="file-uploader"  (change)="handleFileInput($event.target.files)">
+    <label class="custom-file-label" for="file-uploader">Choose file</label>
+</div>
+
+<!-- <div class="custom-file">
+    <input type="file"  accept=".txt" class="custom-file-input" id="file-uploader"  data-target="file-uploader">
+    <label class="custom-file-label" for="file-uploader" data-browse="Bestand kiezen">Voeg je document toe</label>
+</div> -->
+
+<!-- <div class="custom-file">
+                    <input type="file" accept="image/png"  id="file-uploader" data-target="file-uploader" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div> -->
+                <!-- <input type="file" name="loadJson"> -->
+                <input type="text" class="form-control" name="loadJson" [(ngModel)]="loadJson">
                 <button type="submit" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
-                    aria-label="Close" (click)="loadJsonFile()" (click)="getAll()">Load</button>
+                    aria-label="Close" (click)="loadJsonFile()">Load</button>
             </div>
         </div>
     </div>

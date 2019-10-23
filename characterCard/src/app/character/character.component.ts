@@ -157,11 +157,35 @@ export class CharacterComponent implements AfterViewInit{
 
     cardName;
     loadJson;
-
+    
     loadJsonFile() {
-        this.CHcard = this.cardName;
-        localStorage.setItem(this.CHcard, this.loadJson);
+
+
+        let    fileUploader = document.querySelector('#file-uploader');
+        fileUploader.addEventListener('change', (e) => {
+
+            console.log("sss"); // get file object
+            console.log(e.target.addEventListener); // get file object
+        });
+        
+        // console.log(fileUploader);
+
+        // this.CHcard = this.cardName;
+        // localStorage.setItem(this.CHcard, this.loadJson);
+        // this.chCardBox.push(this.CHcard);
+        // setTimeout(() => {
+        //     this.getAll()
+        // }, 100);
     }
+
+    // 試寫讀取txt檔案
+    // fileToUpload: File = null;
+    // handleFileInput(files: File) {
+    //     this.fileToUpload = files.item(0);
+    //     this.fileToUpload = files.;
+    //     console.log(this.fileToUpload); // get file object
+    // }
+
 
 
 
