@@ -74,21 +74,27 @@
                     aria-label="Close" (click)="checkoutCard()">Load</button>
             </div>
             <div class="modal-body mt-2 border-top">
-                <p class="text-center h5">讀取現成檔案</p>
-                <p class="text-center"><small>※請以筆記本打開json檔，複製所有文字貼上</small></p>
-                <div class="d-flex">
+                <p class="text-center mb-1 h5">讀取現成檔案</p>
+                <p class="text-center my-0 text-danger"><small>※請勿上傳非本網頁輸出的txt檔案，以免造成資料錯誤</small></p>
+                <p class="text-center my-0 text-danger"><small>※如果已有同名檔案，將會覆蓋原檔案！</small></p>
+                <!-- <p class="text-center"><small>※請以筆記本打開json檔，複製所有文字貼上</small></p> -->
+                <div class="d-flex mt-2">
                     <div class="col-3">
-                        <label for="jsonCardName"><small>角色卡名稱</small></label>
+                        <label  for="jsonCardName">角色卡名稱</label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="jsonCardName" class="form-control mb-2" [(ngModel)]="jsonCardName">
                     </div>
                 </div>
                 <div class="custom-file">
-                    <input type="file" accept=".txt" class="custom-file-input" id="file-uploader" (change)="jsonUpload($event)">
+                    <input type="file" accept=".txt" class="custom-file-input" id="file-uploader"
+                        (change)="jsonUpload($event)">
                     <label class="custom-file-label" for="file-uploader">{{jsonFileName}}</label>
                 </div>
-                <input type="text" class="form-control" name="loadJson" [(ngModel)]="loadJson">
+
+                <!-- <p class="mt-3 mb-1">貼上json文字</p>
+                <input type="text" class="form-control" name="loadJson" [(ngModel)]="loadJson"> -->
+
                 <button type="submit" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
                     aria-label="Close" (click)="loadJsonFile()">Load</button>
             </div>
