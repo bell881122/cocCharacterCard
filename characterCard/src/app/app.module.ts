@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 // Costum component & service
@@ -18,14 +17,12 @@ import { DicehundredComponent } from './character/dice/dicehundred/dicehundred.c
 import { MutildiceComponent } from './character/dice/mutildice/mutildice.component';
 import { SearchFilterPipe } from './searchfilter.pipe';
 import { BackstoryComponent } from './character/otherdata/backstory.component';
-// import { DiceComponent } from './character/dice/dice.component';
-
-
+// import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-// Costum Component
+// 這裡放Costum Component
     CharacterComponent,
     ProfileComponent,
     CharacteristicsComponent,
@@ -37,16 +34,15 @@ import { BackstoryComponent } from './character/otherdata/backstory.component';
     MutildiceComponent,
     SearchFilterPipe,
     BackstoryComponent,
-    // DiceComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    // HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // HttpClientModule,
   ],
   providers: [
-    // Costum Service
+    // 這裡放Costum Service
     StatusItemService,
     SkillsService
   ],

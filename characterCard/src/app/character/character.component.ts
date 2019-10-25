@@ -19,24 +19,19 @@ import { BackstoryComponent } from '../character/otherdata/backstory.component';
     `]
 })
 
-export class CharacterComponent implements AfterViewInit{
+export class CharacterComponent implements AfterViewInit {
 
     @ViewChild(ProfileComponent, { static: false }) profile: ProfileComponent;
     @ViewChild(CharacteristicsComponent, { static: false }) characteristics: CharacteristicsComponent;
     @ViewChild(SkillListComponent, { static: false }) skillList: SkillListComponent;
     @ViewChild(BackstoryComponent, { static: false }) backstory: BackstoryComponent;
 
-    // profileTitle;
-    ngAfterViewInit() {
-        // console.log(this.profile.title);
-        // this.profileTitle = this.profile.title;
-    }
+    ngAfterViewInit() { }
 
     title = `Character Card`
     subtitle = `CALL Of CTHULHU`;
 
     chCardBox = [];
-
     CHcard = 'CH1';
 
     ngOnInit() {
@@ -53,9 +48,7 @@ export class CharacterComponent implements AfterViewInit{
             // this.chCardBox[data] = JSON.parse(localStorage.getItem(data));
         }
         this.lastCard = this.CHcard;
-        // this.saveAll();
-        // console.log(this.chCardBox);
-        // localStorage.removeItem("My Card");
+        // localStorage.removeItem("test");
     }
 
     chooseThisCard;
@@ -113,7 +106,7 @@ export class CharacterComponent implements AfterViewInit{
             localStorage.setItem(this.CHcard, JSON.stringify(data));
             this.chCardBox.push(data["Charactor"]);
 
-        }else{
+        } else {
             this.profile.saveProfileData();
             this.characteristics.saveStatus();
             this.skillList.saveSkillData();
@@ -126,7 +119,7 @@ export class CharacterComponent implements AfterViewInit{
 
     getAll() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
-        console.log(data.profiledata);
+        // console.log(data.profiledata);
 
         if (data.profiledata == undefined) {
             alert("此資料卡內無資料");
@@ -142,6 +135,8 @@ export class CharacterComponent implements AfterViewInit{
     jsonData;
     downloadJson() {
 
+        this.saveAll();
+
         var fileName = "mycard.txt";//匯出的檔名
         var data = localStorage.getItem(this.CHcard);
         var blob = new Blob([data], {
@@ -155,38 +150,35 @@ export class CharacterComponent implements AfterViewInit{
         link.click();
     }
 
-    cardName;
-    loadJson;
-    
-    loadJsonFile() {
+    jsonFileName = "Choose file";
+    file: any;
+    jsonUpload(e) {
+        this.file = e.target.files[0];
+        this.jsonFileName = this.file.name;
+        // console.log(this.jsonFileName);
 
-
-        let    fileUploader = document.querySelector('#file-uploader');
-        fileUploader.addEventListener('change', (e) => {
-
-            console.log("sss"); // get file object
-            console.log(e.target.addEventListener); // get file object
-        });
-        
-        // console.log(fileUploader);
-
-        // this.CHcard = this.cardName;
-        // localStorage.setItem(this.CHcard, this.loadJson);
-        // this.chCardBox.push(this.CHcard);
-        // setTimeout(() => {
-        //     this.getAll()
-        // }, 100);
+        let fileReader = new FileReader();
+        // console.log(fileReader.result);
+        fileReader.onloadend = () => {
+            // console.log(fileReader.result);
+            this.loadJson = fileReader.result.toString();
+        };
+        fileReader.readAsText(this.file);
     }
 
-    // 試寫讀取txt檔案
-    // fileToUpload: File = null;
-    // handleFileInput(files: File) {
-    //     this.fileToUpload = files.item(0);
-    //     this.fileToUpload = files.;
-    //     console.log(this.fileToUpload); // get file object
-    // }
+    jsonCardName;
+    loadJson;
+    loadJsonFile() {
+        console.log(this.loadJson);
 
+        this.CHcard = this.jsonCardName;
+        localStorage.setItem(this.CHcard, this.loadJson);
+        this.chCardBox.push(this.CHcard);
 
-
+        setTimeout(() => {
+            this.getAll()
+        }, 100);
+    }
 
 }
+

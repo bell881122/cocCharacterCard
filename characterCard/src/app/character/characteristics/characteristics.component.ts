@@ -73,7 +73,6 @@ export class CharacteristicsComponent implements AfterViewInit {
 
     getStatus() {
         let data = JSON.parse(localStorage.getItem(this.CHcard));
-        console.log(data.saveStatusData);
 
         if (data.saveStatusData == undefined) {
             return;
