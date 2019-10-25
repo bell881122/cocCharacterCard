@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="file-uploader" (change)="jsonUpload($event)">
+                    <input type="file" accept=".txt" class="custom-file-input" id="file-uploader" (change)="jsonUpload($event)">
                     <label class="custom-file-label" for="file-uploader">{{jsonFileName}}</label>
                 </div>
                 <input type="text" class="form-control" name="loadJson" [(ngModel)]="loadJson">
