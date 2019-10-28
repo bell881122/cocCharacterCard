@@ -3,6 +3,7 @@ import { ProfileComponent } from '../character/profile/profile.component';
 import { CharacteristicsComponent } from '../character/characteristics/characteristics.component';
 import { SkillListComponent } from '../character/skill-list/skill-list.component';
 import { BackstoryComponent } from '../character/otherdata/backstory.component';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
     selector: 'character',
@@ -48,7 +49,7 @@ export class CharacterComponent implements AfterViewInit {
             // this.chCardBox[data] = JSON.parse(localStorage.getItem(data));
         }
         this.lastCard = this.CHcard;
-        // localStorage.removeItem("test");
+        localStorage.removeItem("123");
     }
 
     chooseThisCard;
@@ -94,11 +95,22 @@ export class CharacterComponent implements AfterViewInit {
         this.addNewCHcardData = "";
     }
 
+    saveNewCard() {
+        this.saveAll();
+        this.addNewFalse();
+        this.alertsave();
+    }
+
     DontSave() {
         this.CHcard = this.lastCard;
+        this.addNewFalse();
     }
     // console.log(this.addNewCHcardData);
 
+    justSave(){
+        this.alertsave();
+        this.saveAll();    
+    }
     saveAll() {
         if (localStorage.getItem(this.CHcard) == null) {
 
@@ -113,8 +125,10 @@ export class CharacterComponent implements AfterViewInit {
             this.backstory.saveBackstorys();
         }
         this.addNewCHcardData = "";
+    }
+
+    alertsave(){
         alert('所有資料已儲存');
-        // console.log(this.chCardBox);
     }
 
     getAll() {
