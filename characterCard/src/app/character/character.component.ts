@@ -115,13 +115,13 @@ export class CharacterComponent implements AfterViewInit {
 
         } else {
             let data = JSON.parse(localStorage.getItem(this.CHcard));
-            
             data.Charactor = this.CHcard;
-            this.profile.saveProfileData();
-            this.characteristics.saveStatus();
-            this.skillList.saveSkillData();
-            this.backstory.saveBackstorys();
         }
+
+        this.profile.saveProfileData();
+        this.characteristics.saveStatus();
+        this.skillList.saveSkillData();
+        this.backstory.saveBackstorys();
         this.addNewCHcardData = "";
     }
 
