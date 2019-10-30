@@ -35,6 +35,10 @@ export class SkillListComponent implements AfterViewInit {
   careerTotalPoint;
   hobbyTotalPoint;
 
+  careerLeftPoint;
+  hobbyLeftPoint;
+
+
   // 母語&閃避 + 職業&興趣點數
   constructor(skillsService: SkillsService, statusItemService: StatusItemService) {
     this.skills = skillsService.getSkills();
@@ -48,9 +52,6 @@ export class SkillListComponent implements AfterViewInit {
     // console.log(this.skillTypePoint.careerPoint);
   }
 
-  // ngOnInit() {
-  //   let data = JSON.parse(localStorage.getItem(this.CHcard));
-  // }
 
   ngAfterViewInit() {
     // console.log(this.skillTypePoint);
@@ -70,14 +71,14 @@ export class SkillListComponent implements AfterViewInit {
       this.skillTotalPoint.hobby += this.skills[i].hobbyValue;
     }
     
-    // console.log(varCareerTotalPoint);
     varCareerTotalPoint -= this.skillTotalPoint.carrer;
-    this.skillTypePoint.careerPoint = varCareerTotalPoint;
+    this.careerLeftPoint = varCareerTotalPoint;
     varHobbyTotalPoint -= this.skillTotalPoint.hobby;
-    this.skillTypePoint.hobbyPoint = varHobbyTotalPoint;
+    this.hobbyLeftPoint = varHobbyTotalPoint;
 
+    // console.log(varCareerTotalPoint);
+    // console.log(varHobbyTotalPoint);
     // console.log(this.skillTypePoint);
-
 
   }
 
@@ -124,7 +125,10 @@ export class SkillListComponent implements AfterViewInit {
     };
     let data = JSON.parse(localStorage.getItem(this.CHcard));
     data.skillData = skillData;
+    // console.log(skillData);
+    // console.log(data.skillData);
     localStorage.setItem(this.CHcard, JSON.stringify(data));
+    console.log(JSON.parse(localStorage.getItem(this.CHcard)));
   }
 
 
@@ -132,6 +136,12 @@ export class SkillListComponent implements AfterViewInit {
   getSkillData() {
 
     let data = JSON.parse(localStorage.getItem(this.CHcard));
+
+    // localStorage.setItem(this.CHcard, JSON.stringify(data));
+    if (data.skillData !== undefined) {
+      this.careerTotalPoint = data.skillData.skillTotal[0].careerPoint;
+      this.hobbyTotalPoint = data.skillData.skillTotal[0].hobbyPoint;
+    }
 
     if (data.skillData == undefined) {
       return;

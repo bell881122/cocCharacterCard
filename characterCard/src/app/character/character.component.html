@@ -68,7 +68,9 @@
             <div class="modal-body mt-2">
                 <p class="text-center h5">請選擇角色卡</p>
                 <div *ngFor="let c of chCardBox" class=" d-flex justify-content-center  align-items-center">
-                    <input type="radio" name="c" value="c" class="mx-1" (click)="chooseCard(c)">{{c}}<br />
+                    <input type="radio" [id]="c" name="CharactorCard" [value]="c" class="mx-1"
+                        (click)="chooseCard(c)"><br />
+                    <label [for]="c">{{c}}</label>
                 </div>
                 <button type="button" class="btn btn-primary d-flex mx-auto mt-3" data-dismiss="modal"
                     aria-label="Close" (click)="checkoutCard()">Load</button>
@@ -80,7 +82,7 @@
                 <!-- <p class="text-center"><small>※請以筆記本打開json檔，複製所有文字貼上</small></p> -->
                 <div class="d-flex mt-2">
                     <div class="col-3">
-                        <label  for="jsonCardName">角色卡名稱</label>
+                        <label for="jsonCardName">角色卡名稱</label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="jsonCardName" class="form-control mb-2" [(ngModel)]="jsonCardName">

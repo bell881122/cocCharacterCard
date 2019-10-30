@@ -3,7 +3,6 @@ import { ProfileComponent } from '../character/profile/profile.component';
 import { CharacteristicsComponent } from '../character/characteristics/characteristics.component';
 import { SkillListComponent } from '../character/skill-list/skill-list.component';
 import { BackstoryComponent } from '../character/otherdata/backstory.component';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
     selector: 'character',
@@ -40,16 +39,14 @@ export class CharacterComponent implements AfterViewInit {
             let data = { "Charactor": this.CHcard };
             localStorage.setItem(this.CHcard, JSON.stringify(data));
         }
-        // console.log(JSON.parse(localStorage.getItem(this.CHcard)));
-
 
         for (let i = 0; i < localStorage.length; i++) {
             let data = localStorage.key(i);
             this.chCardBox.push(data);
-            // this.chCardBox[data] = JSON.parse(localStorage.getItem(data));
         }
+
         this.lastCard = this.CHcard;
-        localStorage.removeItem("123");
+        // localStorage.removeItem("CH3");
     }
 
     chooseThisCard;
@@ -59,11 +56,10 @@ export class CharacterComponent implements AfterViewInit {
 
     checkoutCard() {
         this.CHcard = this.chooseThisCard;
-        console.log(JSON.parse(localStorage.getItem(this.CHcard)));
+        // console.log(JSON.parse(localStorage.getItem(this.CHcard)));
         setTimeout(() => {
             this.getAll()
         }, 100);
-
     }
 
     // 以新名稱儲存檔案
@@ -87,7 +83,6 @@ export class CharacterComponent implements AfterViewInit {
             this.lastCard = this.CHcard;
             this.CHcard = this.addNewCHcardData;
         }
-        // console.log(this.chCardBox);
     }
 
     addNewFalse() {
@@ -105,12 +100,12 @@ export class CharacterComponent implements AfterViewInit {
         this.CHcard = this.lastCard;
         this.addNewFalse();
     }
-    // console.log(this.addNewCHcardData);
 
     justSave(){
-        this.alertsave();
         this.saveAll();    
+        this.alertsave();
     }
+    
     saveAll() {
         if (localStorage.getItem(this.CHcard) == null) {
 
@@ -119,6 +114,9 @@ export class CharacterComponent implements AfterViewInit {
             this.chCardBox.push(data["Charactor"]);
 
         } else {
+            let data = JSON.parse(localStorage.getItem(this.CHcard));
+            
+            data.Charactor = this.CHcard;
             this.profile.saveProfileData();
             this.characteristics.saveStatus();
             this.skillList.saveSkillData();
