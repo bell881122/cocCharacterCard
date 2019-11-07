@@ -192,5 +192,12 @@ export class CharacterComponent implements AfterViewInit {
         }, 100);
     }
 
+    SaveButtonDisabled=true;
+    LoadButtonDisabled=false;
+    ifSaveButtonDisabled(){
+        this.SaveButtonDisabled = !this.SaveButtonDisabled;
+        this.LoadButtonDisabled = !this.LoadButtonDisabled;
+    }
+
 }
 
